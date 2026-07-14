@@ -27,23 +27,49 @@
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
+
+        
+        .contact-form-panel {
+            background-color: #ffffff !important;
+            border: 1.5px solid rgba(15, 23, 42, 0.12) !important; 
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08) !important; 
+        }
+        .contact-form-panel .form-label {
+            color: #0f172a !important; 
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+        }
+        .contact-form-panel .form-input {
+            color: #0f172a !important; 
+            border: 1.5px solid #cbd5e1 !important; 
+            background-color: #ffffff !important; 
+            font-weight: 500 !important;
+        }
+        .contact-form-panel .form-input::placeholder {
+            color: #475569 !important; 
+            opacity: 1 !important;
+        }
+        .contact-form-panel .form-input:focus {
+            border-color: #2d1ee2 !important;
+            box-shadow: 0 0 0 3px rgba(45, 30, 226, 0.15) !important;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css?v=20260714d" />
+    <link rel="stylesheet" href="style.css?v=20260714z" />
 </head>
 
 <body>
 
     <div class="page-wrapper">
         
-        <!-- Custom Cursor -->
+        
         <div id="custom-cursor-wrapper" class="tp-cursor">
             <div id="cursor-outer">
                 <div id="cursorDot"></div>
             </div>
         </div>
 
-        <!-- Preloader -->
+        
         <div id="preloader" class="preloader stk-boot">
             <div class="stk-boot__stage">
                 <div class="stk-boot__orbit stk-boot__orbit--a"></div>
@@ -63,7 +89,7 @@
 
         <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
-        <!-- Header -->
+        
         <header class="main-header header-style-one header-1">
             <div class="auto-container">
                 <div class="header-lower">
@@ -78,7 +104,7 @@
                                 <nav class="nav main-menu">
                                     <ul class="navigation">
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="about.html">About Us</a></li>
                                         <li><a href="services.html">Services</a></li>
                                         <li><a href="portfolio.html">Portfolio</a></li>
                                         <li><a href="blog.html">Blog</a></li>
@@ -89,7 +115,7 @@
                             <div class="nav-right d-flex align-items-center">
                                 <button class="ui-btn search-btn me-4" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
-                                <a href="get-started.html" class="header-btn">Get Started</a>
+                                <a href="signup.html" class="header-btn">Get Started</a>
                                 <div class="mobile-nav-toggler d-flex d-xl-none style-2">
                                     <span></span><span></span><span></span>
                                 </div>
@@ -99,8 +125,8 @@
                 </div>
             </div>
 
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
+            
+                        <div class="mobile-menu">
                 <div class="menu-backdrop"></div>
                 <nav class="menu-box">
                     <div class="upper-box">
@@ -108,31 +134,14 @@
                         <div class="close-btn"><i class="icon fa fa-times"></i></div>
                     </div>
                     <ul class="navigation clearfix"></ul>
-                    <ul class="contact-list-one">
-                        <li>
-                            <div class="contact-info-box">
-                                <i class="icon lnr-icon-phone-handset"></i>
-                                <span class="title">Call Now</span>
-                                <a href="tel:+919876543210">+91 98765 43210</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-info-box">
-                                <span class="icon lnr-icon-envelope1"></span>
-                                <span class="title">Send Email</span>
-                                <a href="mailto:hello@stackly.agency">hello@stackly.agency</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="social-links">
-                        <li><a href="404.html"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="404.html"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="404.html"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
+                    <div class="mobile-menu-btns">
+                        <a href="signin.html" class="mobile-btn mobile-btn-outline">Sign In</a>
+                        <a href="signup.html" class="mobile-btn mobile-btn-solid">Get Started</a>
+                    </div>
                 </nav>
             </div>
 
-            <!-- Search Popup -->
+            
             <div class="search-popup">
                 <span class="search-back-drop"></span>
                 <button class="close-search"><span class="fa fa-times"></span></button>
@@ -146,7 +155,7 @@
                 </div>
             </div>
 
-            <!-- Sticky Header -->
+            
             <div class="sticky-header">
                 <div class="auto-container">
                     <div class="inner-container">
@@ -166,7 +175,7 @@
                             </div>
                             <button class="ui-btn search-btn me-4 d-none d-lg-block" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
                             <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
-                            <a href="get-started.html" class="header-btn">Get Started</a>
+                            <a href="signup.html" class="header-btn">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -177,24 +186,24 @@
             <div id="smooth-content">
 
                 <main>
-                    <!-- Page Hero -->
-                    <section class="page-hero page-hero-bg" style="--page-hero-bg: url('https://images.unsplash.com/photo-1423666639041-f56000c29a96?auto=format&fit=crop&w=1600&q=80');">
+                    
+                    <section class="page-hero page-hero-bg" style="--page-hero-bg: url('assets/austin-distel-mpN7xjKQ_Ns-unsplash.webp');">
                         <div class="container">
                             <div class="section-header reveal zoom-in">
                                 <span class="section-subtitle">Reach Out</span>
-                                <h1 class="section-title split-text">Connect with <span>Stackly</span></h1>
+                                <h1 class="section-title text_invert split-text">Connect with <span>Stackly</span></h1>
                                 <p class="section-desc">Have questions about MVPs, Figma UI/UX, or custom backend builds? Our Salem design and engineering teams are ready to build.</p>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Headquarters Info Section -->
-                    <section class="section-padding" style="padding: 80px 0;">
+                    
+                    <section class="section-padding" style="padding: 24px 0;">
                         <div class="container">
-                            <div class="row align-items-center g-5">
+                            <div class="row align-items-center g-4">
                                 <div class="col-lg-6 reveal reveal-left">
                                     <span class="section-subtitle">Our Headquarters</span>
-                                    <h2 class="section-title">Visit Our <span>Innovation Hub</span></h2>
+                                    <h2 class="section-title text_invert">Visit Our <span>Innovation Hub</span></h2>
                                     <p class="section-desc">Located in the tech-corridor of Tamil Nadu, our Salem headquarters is where design systems and code layouts are designed. We welcome founders to visit us for collaborative workshops and sprint planning.</p>
                                     <ul class="check-list" style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
                                         <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Collaborative wireframing sessions.</li>
@@ -203,62 +212,81 @@
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 reveal reveal-right">
-                                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Modern Tech Headquarters Building" style="border-radius: var(--radius-lg); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" />
+                                    <img src="assets/link_unsplash_1497366216548_1200.webp" alt="Modern Tech Headquarters Building" style="border-radius: var(--radius-lg); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" />
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Always Available Section -->
-                    <section class="section-padding" style="padding: 80px 0; background-color: rgba(255, 255, 255, 0.02);">
+                    
+                    <section class="section-padding" style="padding: 24px 0; background-color: rgba(255, 255, 255, 0.02);">
                         <div class="container">
-                            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                            <div class="row align-items-center g-4 flex-lg-row-reverse">
                                 <div class="col-lg-6 reveal reveal-right">
                                     <span class="section-subtitle">Always Available</span>
-                                    <h2 class="section-title">Continuous <span>Founder Support</span></h2>
+                                    <h2 class="section-title text_invert">Continuous <span>Founder Support</span></h2>
                                     <p class="section-desc">Building a startup is complex. We provide direct Slack channels, quick response schedules, and continuous technical consulting to ensure your product has zero launch drag.</p>
                                     <div class="row mt-4">
                                         <div class="col-sm-6 mb-3">
                                             <div style="padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card);">
                                                 <i class="fas fa-tachometer-alt" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;"></i>
                                                 <h5 style="color: var(--text-main); margin-bottom: 4px; font-weight:700;">Fast Response Sprints</h5>
-                                                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Sprint statuses checked and updated weekly.</p>
+                                                <p style="color:#0f0f11; font-size: 0.85rem; margin: 0;">Sprint statuses checked and updated weekly.</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 mb-3">
                                             <div style="padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card);">
                                                 <i class="fas fa-users" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;"></i>
                                                 <h5 style="color: var(--text-main); margin-bottom: 4px; font-weight:700;">Direct Tech Channel</h5>
-                                                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Direct access to core designers and devs.</p>
+                                                <p style="color:#0f0f11; font-size: 0.85rem; margin: 0;">Direct access to core designers and devs.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 reveal reveal-left">
-                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Global Support Team Collaboration" style="border-radius: var(--radius-lg); width: 100%; border: 1px solid var(--border);" />
+                                    <img src="assets/link_unsplash_1522071820081.webp" alt="Global Support Team Collaboration" style="border-radius: var(--radius-lg); width: 100%; border: 1px solid var(--border);" />
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Founder Community Section -->
-                    <section class="section-padding bg-gradient-animated" style="padding: 100px 0; color: #fff; text-align: center;">
+                    
+                    <section class="section-padding bg-gradient-animated" style="padding: 36px 0; color:#fff; text-align: center;">
                         <div class="container reveal zoom-in">
-                            <h2 class="section-title" style="color: #fff;">Join the <span>Founder Community</span></h2>
-                            <p class="section-desc" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 40px;">Connect with hundreds of startup founders, early adopters, and engineers building on Stackly's strategy guidelines.</p>
-                            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                                <a href="404.html" class="tj-primary-btn animate-pulse-glow" style="background-color: #5865F2; border-color: #5865F2; border-radius: 50px; padding: 16px 32px;"><span class="btn-text" style="color: #fff;"><i class="fab fa-discord"></i> Join Discord</span></a>
-                                <a href="404.html" class="tj-primary-btn" style="background-color: #111; border-color: #111; border-radius: 50px; padding: 16px 32px;"><span class="btn-text" style="color: #fff;"><i class="fab fa-github"></i> GitHub Discussions</span></a>
+                            <h2 class="section-title text_invert" style="color:#fff;">Join the <span>Founder Community</span></h2>
+                            <p class="section-desc" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 22px;">Connect with hundreds of startup founders, early adopters, and engineers building on Stackly's strategy guidelines.</p>
+
+                            <form class="founder-join-form" id="founderJoinForm" novalidate>
+                                <div class="founder-join-form__row">
+                                    <div class="founder-join-form__field">
+                                        <label for="join-name" class="visually-hidden">Your name</label>
+                                        <input type="text" id="join-name" name="name" class="founder-join-input" placeholder="Your name" autocomplete="name" />
+                                        <span class="form-error" id="join-name-error" aria-live="polite"></span>
+                                    </div>
+                                    <div class="founder-join-form__field">
+                                        <label for="join-email" class="visually-hidden">Email address</label>
+                                        <input type="email" id="join-email" name="email" class="founder-join-input" placeholder="Email address" autocomplete="email" />
+                                        <span class="form-error" id="join-email-error" aria-live="polite"></span>
+                                    </div>
+                                    <button type="submit" class="tj-primary-btn founder-join-submit"><span class="btn-text">Join Community</span></button>
+                                </div>
+                                <p class="form-error form-error--summary" id="join-form-error" aria-live="assertive"></p>
+                                <p class="founder-join-success" id="join-form-success" hidden>You're in — check your inbox for community access details.</p>
+                            </form>
+
+                            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 22px;">
+                                <a href="404.html" class="tj-primary-btn animate-pulse-glow" style="background-color: #5865F2; border-color: #5865F2; border-radius: 50px; padding: 16px 32px;"><span class="btn-text" style="color:#fff;"><i class="fab fa-discord"></i> Join Discord</span></a>
+                                <a href="404.html" class="tj-primary-btn" style="background-color: #111; border-color: #111; border-radius: 50px; padding: 16px 32px;"><span class="btn-text" style="color:#fff;"><i class="fab fa-github"></i> GitHub Discussions</span></a>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Sales FAQ section -->
-                    <section class="section-padding" style="padding: 80px 0;">
+                    
+                    <section class="section-padding" style="padding: 24px 0;">
                         <div class="container">
-                            <div class="section-header text-center reveal zoom-in" style="max-width: 600px; margin: 0 auto 50px;">
+                            <div class="section-header text-center reveal zoom-in" style="max-width: 600px; margin: 0 auto 12px;">
                                 <span class="section-subtitle">Sales & Billing</span>
-                                <h2 class="section-title">Common <span>Questions</span></h2>
+                                <h2 class="section-title text_invert">Common <span>Questions</span></h2>
                             </div>
                             
                             <div class="sales-accordion reveal reveal-up" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
@@ -269,7 +297,7 @@
                                         <i class="fas fa-plus acc-icon" style="transition: transform 0.3s ease; color: var(--primary);"></i>
                                     </button>
                                     <div class="sales-acc-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px;">
-                                        <p style="padding-bottom: 20px; color: var(--text-muted); line-height: 1.6; font-size:0.95rem;">Yes, we structure phased sprint rates and milestones for bootstrapped and seed-stage startups, allowing you to validate MVPs and pitch to investors without heavy upfront costs.</p>
+                                        <p style="padding-bottom: 20px; color:#0f0f11; line-height: 1.6; font-size:0.95rem;">Yes, we structure phased sprint rates and milestones for bootstrapped and seed-stage startups, allowing you to validate MVPs and pitch to investors without heavy upfront costs.</p>
                                     </div>
                                 </div>
 
@@ -279,7 +307,7 @@
                                         <i class="fas fa-plus acc-icon" style="transition: transform 0.3s ease; color: var(--primary);"></i>
                                     </button>
                                     <div class="sales-acc-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px;">
-                                        <p style="padding-bottom: 20px; color: var(--text-muted); line-height: 1.6; font-size:0.95rem;">We charge transparent, sprint-based rates. You receive dedicated builders, open access to Figma and Jira boards, and online billing options. There are no hidden fees or agency lock-ins.</p>
+                                        <p style="padding-bottom: 20px; color:#0f0f11; line-height: 1.6; font-size:0.95rem;">We charge transparent, sprint-based rates. You receive dedicated builders, open access to Figma and Jira boards, and online billing options. There are no hidden fees or agency lock-ins.</p>
                                     </div>
                                 </div>
 
@@ -289,21 +317,23 @@
                                         <i class="fas fa-plus acc-icon" style="transition: transform 0.3s ease; color: var(--primary);"></i>
                                     </button>
                                     <div class="sales-acc-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px;">
-                                        <p style="padding-bottom: 20px; color: var(--text-muted); line-height: 1.6; font-size:0.95rem;">Absolutely. Our engineers manage database migrations and cluster handoffs to AWS, Vercel, or GCP with zero downtime, ensuring a smooth technical transition for your active users.</p>
+                                        <p style="padding-bottom: 20px; color:#0f0f11; line-height: 1.6; font-size:0.95rem;">Absolutely. Our engineers manage database migrations and cluster handoffs to AWS, Vercel, or GCP with zero downtime, ensuring a smooth technical transition for your active users.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Contact Form / Address Section -->
-                    <section class="section-light" style="padding: 60px 0;">
+                    
+                    <section class="section-light contact-hq-section" style="padding: 16px 0;">
                         <div class="container">
                             <div class="contact-grid">
                                 
                                 <div class="contact-info-panel reveal reveal-left">
-                                    <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 12px; font-weight:800; color:#fff;">Headquarters</h2>
-                                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Visit our primary incubation and engineering hub in Salem.</p>
+                                    <div class="contact-panel-head">
+                                        <h2 class="text_invert">Headquarters</h2>
+                                        <p>Visit our primary incubation and engineering hub in Salem.</p>
+                                    </div>
                                     
                                     <div class="contact-details">
                                         <div class="contact-item">
@@ -311,7 +341,7 @@
                                                 <i class="fas fa-map-marker-alt"></i>
                                             </div>
                                             <div class="contact-text">
-                                                <h4 style="color:#fff; font-weight:700;">Salem Address</h4>
+                                                <h4>Salem Address</h4>
                                                 <p>MMR Complex, Chinna Thirupathi,<br>Near Chinna Muniyappan Kovil,<br>Salem, Tamil Nadu 636008</p>
                                             </div>
                                         </div>
@@ -321,7 +351,7 @@
                                                 <i class="fas fa-phone-alt"></i>
                                             </div>
                                             <div class="contact-text">
-                                                <h4 style="color:#fff; font-weight:700;">Phone Support</h4>
+                                                <h4>Phone Support</h4>
                                                 <p>+91 (0) 427 492 849</p>
                                             </div>
                                         </div>
@@ -331,15 +361,14 @@
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                             <div class="contact-text">
-                                                <h4 style="color:#fff; font-weight:700;">Email Inquiries</h4>
+                                                <h4>Email Inquiries</h4>
                                                 <p>support@stacklycloud.com</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Vector Map Mockup -->
-                                    <div class="map-wrapper" style="background-color: var(--bg-main); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; position: relative;">
-                                        <a href="https://maps.google.com/?q=Salem,Tamil+Nadu" target="_blank" style="display: block; width: 100%; height: 100%; text-decoration: none;">
+                                    <div class="map-wrapper">
+                                        <a href="https://maps.google.com/?q=Salem,Tamil+Nadu" target="_blank" rel="noopener noreferrer" aria-label="Open Stackly HQ on Google Maps">
                                             <svg viewBox="0 0 400 240" style="width: 100%; height: 100%;">
                                                 <rect width="400" height="240" fill="#0c0d12" />
                                                 <path d="M 0,100 L 400,100 M 0,180 L 400,180 M 150,0 L 150,240 M 280,0 L 280,240 M 50,0 L 220,240" stroke="#1d2030" stroke-width="6" fill="none" />
@@ -363,30 +392,39 @@
                                 </div>
 
                                 <div class="contact-form-panel reveal reveal-right">
-                                    <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 12px; font-weight:800; color:#fff;">Request Information</h2>
-                                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">Deploy design sprint questions, build quote requests, or technical consultation inquiries. Please fill out the form below, and our team will get back to you within 24 hours.</p>
+                                    <div class="contact-panel-head">
+                                        <h2 class="text_invert">Request Information</h2>
+                                        <p>Deploy design sprint questions, build quote requests, or technical consultation inquiries. Our team replies within 24 hours.</p>
+                                    </div>
                                     
-                                    <form class="contact-form">
+                                    <form class="contact-form" id="contactRequestForm" novalidate>
                                         <div class="row g-3 mb-3">
                                             <div class="col-md-6">
                                                 <label class="form-label" for="name">Your Name <span class="text-danger">*</span></label>
-                                                <input type="text" id="name" class="form-input" placeholder="Arjun Kumar" pattern="[A-Za-z\s]+" title="Name contains only alphabets" required />
+                                                <input type="text" id="name" name="name" class="form-input" placeholder="Arjun Kumar" autocomplete="name" />
+                                                <span class="form-error" id="name-error" aria-live="polite"></span>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label" for="contact-email">Email Address <span class="text-danger">*</span></label>
-                                                <input type="email" id="contact-email" class="form-input" placeholder="arjun@company.com" required />
+                                                <input type="email" id="contact-email" name="email" class="form-input" placeholder="arjun@company.com" autocomplete="email" />
+                                                <span class="form-error" id="contact-email-error" aria-live="polite"></span>
                                             </div>
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label class="form-label" for="subject">Subject <span class="text-danger">*</span></label>
-                                            <input type="text" id="subject" class="form-input" placeholder="SaaS Platform MVP Build Quote" required />
+                                            <input type="text" id="subject" name="subject" class="form-input" placeholder="SaaS Platform MVP Build Quote" />
+                                            <span class="form-error" id="subject-error" aria-live="polite"></span>
                                         </div>
 
                                         <div class="form-group mb-4">
                                             <label class="form-label" for="message">Message <span class="text-danger">*</span></label>
-                                            <textarea id="message" class="form-input" placeholder="How can Stackly help design or build your startup MVP?" required></textarea>
+                                            <textarea id="message" name="message" class="form-input" placeholder="How can Stackly help design or build your startup MVP?"></textarea>
+                                            <span class="form-error" id="message-error" aria-live="polite"></span>
                                         </div>
+
+                                        <p class="form-error form-error--summary" id="contact-form-error" aria-live="assertive"></p>
+                                        <p class="founder-join-success" id="contact-form-success" hidden style="color:#15803d;margin-bottom:12px;">Message sent successfully! We will get in touch shortly.</p>
 
                                         <button type="submit" class="btn btn-primary w-100 py-3" style="border-radius: var(--radius-md); font-weight: 700; background-color: var(--primary); border-color: var(--primary); color: #000;">
                                             Send Message <i class="fas fa-paper-plane"></i>
@@ -398,9 +436,9 @@
                     </section>
                 </main>
 
-                <!-- Footer -->
+                
                 <footer class="footer-wrapper footer-one section-bg-2 footer-stackly">
-                    <div class="footer-one__bg-image bg-cover" style="background-image: url(https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/footer-bg.png);"></div>
+                    <div class="footer-one__bg-image bg-cover" style="background-image: url(assets/link_footer_bg.webp);"></div>
                     <div class="shape">
                         <img class="shape-1" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 01.png" alt="" />
                         <img class="shape-2" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 02.png" alt="" />
@@ -412,10 +450,10 @@
                                     <h4>Subscribe to Stackly Updates</h4>
                                     <p>Get product releases, startup strategy guidelines, and cloud engineering resources in your inbox.</p>
                                 </div>
-                                <div class="footer-subscribe-form">
-                                    <input type="email" placeholder="Enter your email..." />
-                                    <button type="button">Subscribe</button>
-                                </div>
+                                <form class="footer-subscribe-form" action="404.html">
+                                    <input type="email" placeholder="Enter your email..." required />
+                                    <button type="submit">Subscribe</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -446,7 +484,7 @@
                                             <li><a href="services.html">Security Shield</a></li>
                                             <li><a href="services.html">API Reference</a></li>
                                             <li><a href="services.html">Global Network</a></li>
-                                            <li><a href="get-started.html">Pricing Plans</a></li>
+                                            <li><a href="signup.html">Pricing Plans</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -498,9 +536,9 @@
             </div>
         </div>
 
-        <script src="scripts.js?v=20260713c"></script>
+        <script src="scripts.js?v=20260714u"></script>
         <script>
-            // Inline Accordion Logic
+            
             document.addEventListener('DOMContentLoaded', () => {
                 const accBtns = document.querySelectorAll('.sales-acc-btn');
                 accBtns.forEach(btn => {
@@ -523,6 +561,152 @@
                         }
                     });
                 });
+
+                const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+                const isName = (v) => /^[A-Za-z][A-Za-z\s.'-]{1,59}$/.test(v);
+
+                const setError = (el, msg) => {
+                    if (!el) return;
+                    el.textContent = msg || '';
+                    el.removeAttribute('hidden');
+                };
+
+                const markInvalid = (input, on) => {
+                    if (!input) return;
+                    input.classList.toggle('is-invalid', !!on);
+                    input.setAttribute('aria-invalid', on ? 'true' : 'false');
+                };
+
+                
+                const joinForm = document.getElementById('founderJoinForm');
+                if (joinForm) {
+                    const nameInput = document.getElementById('join-name');
+                    const emailInput = document.getElementById('join-email');
+                    const nameErr = document.getElementById('join-name-error');
+                    const emailErr = document.getElementById('join-email-error');
+                    const summary = document.getElementById('join-form-error');
+                    const success = document.getElementById('join-form-success');
+
+                    joinForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        setError(nameErr, '');
+                        setError(emailErr, '');
+                        setError(summary, '');
+                        if (success) success.hidden = true;
+                        markInvalid(nameInput, false);
+                        markInvalid(emailInput, false);
+
+                        const name = (nameInput.value || '').trim();
+                        const email = (emailInput.value || '').trim();
+                        let hasError = false;
+
+                        if (!name) {
+                            setError(nameErr, 'Please enter your name');
+                            markInvalid(nameInput, true);
+                            hasError = true;
+                        } else if (!isName(name)) {
+                            setError(nameErr, 'Name can only contains alphabets');
+                            markInvalid(nameInput, true);
+                            hasError = true;
+                        }
+
+                        if (!email) {
+                            setError(emailErr, 'Please enter your email address');
+                            markInvalid(emailInput, true);
+                            hasError = true;
+                        } else if (!isEmail(email)) {
+                            setError(emailErr, 'Please enter a valid email address');
+                            markInvalid(emailInput, true);
+                            hasError = true;
+                        }
+
+                        if (hasError) {
+                            setError(summary, 'Please fix the errors above to join the community');
+                            return;
+                        }
+
+                        window.location.href = '404.html';
+                    });
+                }
+
+                
+                const contactForm = document.getElementById('contactRequestForm');
+                if (contactForm) {
+                    const fields = {
+                        name: document.getElementById('name'),
+                        email: document.getElementById('contact-email'),
+                        subject: document.getElementById('subject'),
+                        message: document.getElementById('message')
+                    };
+                    const errors = {
+                        name: document.getElementById('name-error'),
+                        email: document.getElementById('contact-email-error'),
+                        subject: document.getElementById('subject-error'),
+                        message: document.getElementById('message-error')
+                    };
+                    const summary = document.getElementById('contact-form-error');
+                    const success = document.getElementById('contact-form-success');
+
+                    contactForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        Object.keys(errors).forEach((k) => setError(errors[k], ''));
+                        setError(summary, '');
+                        if (success) success.hidden = true;
+                        Object.keys(fields).forEach((k) => markInvalid(fields[k], false));
+
+                        const name = (fields.name.value || '').trim();
+                        const email = (fields.email.value || '').trim();
+                        const subject = (fields.subject.value || '').trim();
+                        const message = (fields.message.value || '').trim();
+                        let hasError = false;
+
+                        if (!name) {
+                            setError(errors.name, 'Please enter your name');
+                            markInvalid(fields.name, true);
+                            hasError = true;
+                        } else if (!isName(name)) {
+                            setError(errors.name, 'Name can only contains alphabets');
+                            markInvalid(fields.name, true);
+                            hasError = true;
+                        }
+
+                        if (!email) {
+                            setError(errors.email, 'Please enter your email address');
+                            markInvalid(fields.email, true);
+                            hasError = true;
+                        } else if (!isEmail(email)) {
+                            setError(errors.email, 'Please enter a valid email address');
+                            markInvalid(fields.email, true);
+                            hasError = true;
+                        }
+
+                        if (!subject) {
+                            setError(errors.subject, 'Please enter a subject');
+                            markInvalid(fields.subject, true);
+                            hasError = true;
+                        }
+
+                        if (!message) {
+                            setError(errors.message, 'Please enter your message');
+                            markInvalid(fields.message, true);
+                            hasError = true;
+                        } else if (message.length < 10) {
+                            setError(errors.message, 'Message should be at least 10 characters');
+                            markInvalid(fields.message, true);
+                            hasError = true;
+                        }
+
+                        if (hasError) {
+                            setError(summary, 'Please fix the highlighted errors and try again');
+                            return;
+                        }
+
+                        if (success) success.hidden = false;
+                        contactForm.reset();
+                    }, true);
+                }
             });
         </script>
     </div>

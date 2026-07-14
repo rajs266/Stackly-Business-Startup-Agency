@@ -13086,7 +13086,12 @@ var THEMEMASCOT = {};
         }));
         $(".mobile-menu .menu-backdrop, .mobile-menu .close-btn").on("click", (function() {
             $("body").removeClass("mobile-menu-visible")
-        }))
+        }));
+        $(window).on("resize", (function() {
+            if ($(window).width() >= 1200) {
+                $("body").removeClass("mobile-menu-visible");
+            }
+        }));
     }
     if ($(".progress-line").length) {
         $(".progress-line").appear((function() {
@@ -13153,7 +13158,7 @@ var THEMEMASCOT = {};
         gsap.config({
             nullTargetWarn: false
         });
-        if (typeof ScrollSmoother !== "undefined" && ScrollSmoother.create) {
+        if (typeof ScrollSmoother !== "undefined" && ScrollSmoother.create && !document.body.classList.contains("dashboard-page")) {
             ScrollSmoother.create({
                 smooth: 2,
                 effects: true,
@@ -13316,28 +13321,7 @@ var THEMEMASCOT = {};
             })
         }))
     }));
-    let ca = gsap.matchMedia();
-    ca.add("(min-width: 1199px)", (() => {
-        let tl = gsap.timeline();
-        let projectpanels = document.querySelectorAll(".tp-case-panel");
-        let baseOffset = 225;
-        let offsetIncrement = 0;
-        projectpanels.forEach(((section, index) => {
-            let topOffset = baseOffset + index * offsetIncrement;
-            tl.to(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    pin: section,
-                    scrub: 1,
-                    start: `top ${topOffset}px`,
-                    end: "bottom 100%",
-                    endTrigger: ".tp-case-pin",
-                    pinSpacing: false,
-                    markers: false
-                }
-            })
-        }))
-    }));
+
     let sp = gsap.matchMedia();
     sp.add("(min-width: 1199px)", (() => {
         let tl = gsap.timeline();
@@ -13546,41 +13530,7 @@ var THEMEMASCOT = {};
             }
         })
     }
-    if ($(".case-slider").length > 0) {
-        var caseSlider = new Swiper(".case-slider", {
-            loop: true,
-            loopedSlides: 8,
-            loopAdditionalSlides: 4,
-            slidesPerView: "auto",
-            spaceBetween: 24,
-            centeredSlides: false,
-            speed: 8e3,
-            allowTouchMove: false,
-            simulateTouch: false,
-            touchStartPreventDefault: false,
-            touchMoveStopPropagation: false,
-            preventInteractionOnTransition: true,
-            watchOverflow: true,
-            observer: false,
-            observeParents: false,
-            autoplay: {
-                delay: 1,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false
-            },
-            breakpoints: {
-                0: {
-                    spaceBetween: 16
-                },
-                768: {
-                    spaceBetween: 20
-                },
-                1200: {
-                    spaceBetween: 24
-                }
-            }
-        })
-    }
+
     if (".case-slider-3") {
         var caseSlider3 = new Swiper(".case-slider-3", {
             loop: true,
@@ -14325,7 +14275,7 @@ document.addEventListener("DOMContentLoaded", (function() {
     }
 
     function refreshSwipers() {
-        document.querySelectorAll(".service-slide, .case-slider, .marquee-slider").forEach((function(el) {
+        document.querySelectorAll(".service-slide, .marquee-slider").forEach((function(el) {
             if (el.swiper && typeof el.swiper.update === "function") {
                 el.swiper.update();
                 if (typeof el.swiper.updateSlides === "function") el.swiper.updateSlides();
@@ -14335,7 +14285,7 @@ document.addEventListener("DOMContentLoaded", (function() {
     }
 
     function ensureVisibleCards() {
-        document.querySelectorAll(".service-slide .card-style, .case-one__single-card, .case-one__single-card .image img").forEach((function(el) {
+        document.querySelectorAll(".service-slide .card-style").forEach((function(el) {
             el.style.opacity = "1";
             el.style.visibility = "visible"
         }))
@@ -14367,47 +14317,10 @@ document.addEventListener("DOMContentLoaded", (function() {
         e.stopPropagation();
         window.location.href = "404.html"
     }), true);
-    window.addEventListener("load", (function() {
-        window.setTimeout((function() {
-            document.querySelectorAll(".case-slider").forEach((function(el) {
-                if (!el.swiper) return;
-                try {
-                    if (el.swiper.params) {
-                        el.swiper.params.slidesPerView = "auto";
-                        el.swiper.params.spaceBetween = 24;
-                        el.swiper.params.speed = 8e3;
-                        el.swiper.params.centeredSlides = false;
-                        el.swiper.params.allowTouchMove = false;
-                        el.swiper.params.simulateTouch = false;
-                        el.swiper.params.touchStartPreventDefault = false;
-                        el.swiper.params.touchMoveStopPropagation = false;
-                        el.swiper.allowTouchMove = false;
-                        if (el.swiper.params.autoplay) {
-                            el.swiper.params.autoplay.pauseOnMouseEnter = false;
-                            el.swiper.params.autoplay.disableOnInteraction = false;
-                            el.swiper.params.autoplay.delay = 1
-                        }
-                    }
-                    if (el.swiper.autoplay && typeof el.swiper.autoplay.start === "function") {
-                        el.swiper.autoplay.start()
-                    }
-                    el.addEventListener("mouseenter", (function() {
-                        if (el.swiper && el.swiper.autoplay && typeof el.swiper.autoplay.start === "function") {
-                            el.swiper.autoplay.start()
-                        }
-                    }));
-                    el.addEventListener("mouseleave", (function() {
-                        if (el.swiper && el.swiper.autoplay && typeof el.swiper.autoplay.start === "function") {
-                            el.swiper.autoplay.start()
-                        }
-                    }))
-                } catch (err) {}
-            }))
-        }), 900)
-    }))
+
 })();
 
-// CUSTOM SUBPAGE INITIALIZATIONS AND ANIMATIONS
+
 document.addEventListener('DOMContentLoaded', () => {
   initTiltEffect();
   initScrollReveal();
@@ -14551,115 +14464,131 @@ function initCounterUp() {
 function initServiceTabFlip() {
   const stackWrap = document.querySelector('.services_stack_wrap');
   const stack = document.querySelector('.services_stack');
-  const tabs = document.querySelectorAll('.service_item[data-img]');
-  if (!stack || !tabs.length) return;
+  const tabs = Array.from(document.querySelectorAll('.service_item[data-img]'));
+  if (!stackWrap || !stack || !tabs.length) return;
 
-  const FLIP_MS = 520;
+  const FLIP_OUT_MS = 150;
+  const FLIP_IN_MS = 160;
+  let activeTab = tabs.find((t) => t.classList.contains('active')) || tabs[0];
+  let animating = false;
+  let queuedTab = null;
 
-  function resetCard(card) {
-    if (!card) return;
-    card.classList.remove('is-flip-out-x', 'is-flip-in-x');
-    card.style.transition = '';
+ 
+  stackWrap.classList.add('has-flip-stage');
+  let stage = stackWrap.querySelector('.services_flip_stage');
+  if (!stage) {
+    stage = document.createElement('div');
+    stage.className = 'services_flip_stage';
+    stage.setAttribute('aria-hidden', 'true');
+    stage.innerHTML = '<div class="service_flip_card is-stage-card"><img alt="" /></div>';
+    stackWrap.insertBefore(stage, stack);
+  }
+  const stageCard = stage.querySelector('.service_flip_card');
+  const stageImg = stage.querySelector('img');
+
+  function getTabImage(tab) {
+    const img = tab.querySelector('.service_flip_card img');
+    return (img && img.getAttribute('src')) || tab.getAttribute('data-img') || '';
   }
 
-  function flipCardIn(card) {
-    if (!card) return;
-    card.classList.remove('is-flip-out-x', 'is-flip-in-x');
-    card.style.transition = 'none';
-    card.classList.add('is-flip-in-x');
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        card.style.transition = '';
-        card.classList.remove('is-flip-in-x');
-      });
+  function getTabAlt(tab) {
+    const img = tab.querySelector('.service_flip_card img');
+    return (img && img.getAttribute('alt')) || '';
+  }
+
+  function positionStage(tab) {
+    const content = tab.querySelector('.service_tab_content');
+    if (!content) return;
+    const wrapRect = stackWrap.getBoundingClientRect();
+    const contentRect = content.getBoundingClientRect();
+    const top = contentRect.top - wrapRect.top + (contentRect.height - stage.offsetHeight) / 2;
+    stage.style.top = Math.max(0, top) + 'px';
+  }
+
+  function setActiveClasses(tab) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
     });
+    activeTab = tab;
+    positionStage(tab);
   }
 
-  function switchTab(tab) {
-    const prevActive = document.querySelector('.service_item.active');
-    if (prevActive === tab) return;
+  function wait(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
 
-    const nextCard = tab.querySelector('.service_flip_card');
-
-    if (prevActive) {
-      const prevCard = prevActive.querySelector('.service_flip_card');
-      prevActive.classList.remove('active');
-      prevActive.setAttribute('aria-selected', 'false');
-      if (prevCard) {
-        prevCard.classList.remove('is-flip-in-x');
-        prevCard.classList.add('is-flip-out-x');
-        window.setTimeout(() => resetCard(prevCard), FLIP_MS);
-      }
+  async function playFlipTo(tab) {
+    if (!tab) tab = tabs[0];
+    if (tab === activeTab && stageImg.getAttribute('src') === getTabImage(tab)) {
+      positionStage(tab);
+      stageCard.classList.remove('is-flip-out-x', 'is-flip-in-x');
+      return;
     }
 
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    flipCardIn(nextCard);
+    if (animating) {
+      queuedTab = tab;
+      return;
+    }
 
-    if (window.matchMedia('(max-width: 768px)').matches) {
-      window.requestAnimationFrame(() => {
-        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
+    animating = true;
+    const nextSrc = getTabImage(tab);
+    const nextAlt = getTabAlt(tab);
+
+    
+    stageCard.classList.remove('is-flip-in-x');
+    stageCard.classList.add('is-flip-out-x');
+    await wait(FLIP_OUT_MS);
+
+    
+    setActiveClasses(tab);
+    stageImg.setAttribute('src', nextSrc);
+    stageImg.setAttribute('alt', nextAlt);
+
+    
+    stageCard.classList.remove('is-flip-out-x');
+    stageCard.style.transition = 'none';
+    stageCard.classList.add('is-flip-in-x');
+    await wait(20);
+    stageCard.style.transition = '';
+    stageCard.classList.remove('is-flip-in-x');
+    await wait(FLIP_IN_MS);
+
+    stageCard.classList.remove('is-flip-out-x', 'is-flip-in-x');
+    animating = false;
+
+    if (queuedTab && queuedTab !== activeTab) {
+      const next = queuedTab;
+      queuedTab = null;
+      playFlipTo(next);
+    } else {
+      queuedTab = null;
     }
   }
 
-  function getTabFromPoint(clientY) {
-    let matched = null;
-    tabs.forEach((tab) => {
-      const parts = tab.querySelectorAll('.service_tab_num, .service_tab_media, .service_tab_content');
-      let top = Infinity;
-      let bottom = -Infinity;
-      parts.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.height === 0 && rect.width === 0) return;
-        top = Math.min(top, rect.top);
-        bottom = Math.max(bottom, rect.bottom);
+  
+  tabs.forEach((tab) => {
+    const src = getTabImage(tab);
+    if (!src) return;
+    const preload = new Image();
+    preload.src = src;
+  });
+  stageImg.setAttribute('src', getTabImage(tabs[0]));
+  stageImg.setAttribute('alt', getTabAlt(tabs[0]));
+  setActiveClasses(tabs[0]);
+  stageCard.classList.remove('is-flip-out-x', 'is-flip-in-x');
+
+  tabs.forEach((tab) => {
+    ['.service_tab_num', '.service_tab_content', '.service_tab_media'].forEach((sel) => {
+      const el = tab.querySelector(sel);
+      if (!el) return;
+      el.addEventListener('mouseenter', () => {
+        playFlipTo(tab);
       });
-      if (top !== Infinity && clientY >= top - 8 && clientY <= bottom + 8) {
-        matched = tab;
-      }
     });
-    if (matched) return matched;
 
-    let closest = tabs[0];
-    let minDist = Infinity;
-    tabs.forEach((tab) => {
-      const content = tab.querySelector('.service_tab_content');
-      if (!content) return;
-      const rect = content.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const dist = Math.abs(clientY - center);
-      if (dist < minDist) {
-        minDist = dist;
-        closest = tab;
-      }
-    });
-    return closest;
-  }
-
-  const trackTarget = stackWrap || stack;
-  let lastClientY = window.innerHeight / 2;
-  let isMouseInTrackTarget = false;
-
-  trackTarget.addEventListener('mouseenter', () => {
-    isMouseInTrackTarget = true;
-  });
-  trackTarget.addEventListener('mouseleave', () => {
-    isMouseInTrackTarget = false;
-  });
-  trackTarget.addEventListener('mousemove', (e) => {
-    lastClientY = e.clientY;
-    switchTab(getTabFromPoint(lastClientY));
-  });
-
-  window.addEventListener('scroll', () => {
-    if (isMouseInTrackTarget) {
-      switchTab(getTabFromPoint(lastClientY));
-    }
-  }, { passive: true });
-
-  tabs.forEach(tab => {
-    tab.addEventListener('focus', () => switchTab(tab));
+    tab.addEventListener('focusin', () => playFlipTo(tab));
     tab.addEventListener('click', () => {
       window.location.href = '404.html';
     });
@@ -14669,6 +14598,18 @@ function initServiceTabFlip() {
         window.location.href = '404.html';
       }
     });
+  });
+
+  stackWrap.addEventListener('mouseleave', () => {
+    playFlipTo(tabs[0]);
+  });
+
+  window.addEventListener('scroll', () => {
+    positionStage(activeTab);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    positionStage(activeTab);
   });
 }
 
@@ -14772,3 +14713,197 @@ function initSubpageForms() {
   });
 }
 
+
+
+(function () {
+  if (!document.body || !document.body.classList.contains('dashboard-page')) return;
+
+  var sidebar = document.getElementById('dashboard-sidebar');
+  var toggleBtn = document.getElementById('sidebar-toggle');
+  var closeBtn = document.getElementById('sidebar-close');
+  var loader = document.getElementById('stage-loader');
+  var isAdmin = document.body.classList.contains('dashboard-page--admin');
+  var requiredRole = isAdmin ? 'admin' : 'customer';
+
+  
+  var backdrop = document.createElement('div');
+  backdrop.className = 'dashboard-sidebar-backdrop';
+  backdrop.id = 'dashboard-sidebar-backdrop';
+  document.body.appendChild(backdrop);
+
+  function openSidebar() {
+    document.body.classList.add('sidebar-open');
+    if (sidebar) sidebar.classList.add('open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+    if (sidebar) sidebar.classList.remove('open');
+  }
+  function toggleSidebar() {
+    if (document.body.classList.contains('sidebar-open')) closeSidebar();
+    else openSidebar();
+  }
+
+  if (toggleBtn) toggleBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    toggleSidebar();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+  });
+  backdrop.addEventListener('click', closeSidebar);
+
+  
+  function stopScrollChain(e) {
+    e.stopPropagation();
+  }
+  if (sidebar) {
+    sidebar.addEventListener('wheel', stopScrollChain, { passive: true });
+    sidebar.addEventListener('touchmove', stopScrollChain, { passive: true });
+    var nav = sidebar.querySelector('.sidebar-nav');
+    if (nav) {
+      nav.addEventListener('wheel', function (e) {
+        e.stopPropagation();
+        var atTop = nav.scrollTop <= 0;
+        var atBottom = Math.ceil(nav.scrollTop + nav.clientHeight) >= nav.scrollHeight;
+        if ((atTop && e.deltaY < 0) || (atBottom && e.deltaY > 0)) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      nav.addEventListener('touchstart', function (e) {
+        nav._touchY = e.touches[0].clientY;
+      }, { passive: true });
+
+      nav.addEventListener('touchmove', function (e) {
+        e.stopPropagation();
+        if (!nav._touchY) return;
+        var dy = e.touches[0].clientY - nav._touchY;
+        var atTop = nav.scrollTop <= 0;
+        var atBottom = Math.ceil(nav.scrollTop + nav.clientHeight) >= nav.scrollHeight;
+        if ((atTop && dy > 0) || (atBottom && dy < 0)) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    }
+  }
+
+  
+  document.addEventListener('touchmove', function (e) {
+    if (!document.body.classList.contains('sidebar-open')) return;
+    if (sidebar && sidebar.contains(e.target)) return;
+    e.preventDefault();
+  }, { passive: false });
+
+  
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sidebar-link[data-panel]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.dashboard-panel'));
+
+  function activatePanel(panelId) {
+    if (!panelId) return;
+    links.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('data-panel') === panelId);
+    });
+    panels.forEach(function (panel) {
+      var id = panel.id.replace(/^panel-/, '');
+      panel.classList.toggle('active', id === panelId);
+    });
+    if (window.matchMedia('(max-width: 900px)').matches) closeSidebar();
+    try {
+      history.replaceState(null, '', '#' + panelId);
+    } catch (err) {}
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var panelId = link.getAttribute('data-panel');
+      if (!panelId) return;
+      e.preventDefault();
+      activatePanel(panelId);
+    });
+  });
+
+  
+  if (location.hash) {
+    var hashPanel = location.hash.replace('#', '');
+    if (document.getElementById('panel-' + hashPanel)) activatePanel(hashPanel);
+  }
+
+  
+  function readUser() {
+    try {
+      var raw = localStorage.getItem('stackly_user');
+      return raw ? JSON.parse(raw) : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  var user = readUser();
+  if (!user || !user.loggedIn) {
+    window.location.href = 'signin.html';
+    return;
+  }
+  if (user.role && user.role !== requiredRole) {
+    window.location.href = user.role === 'admin' ? 'admin-dashboard.html' : 'customer-dashboard.html';
+    return;
+  }
+
+  var displayName = (user.name || (isAdmin ? 'Admin' : 'Customer')).trim() || (isAdmin ? 'Admin' : 'Customer');
+  var displayEmail = (user.email || (isAdmin ? 'admin@stackly.com' : 'founder@stackly.com')).trim();
+
+  function setText(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+  setText('user-name', displayName);
+  setText('user-email', displayEmail);
+  setText('welcome-name', displayName);
+  setText('welcome-email', displayEmail);
+  setText('user-role-badge', isAdmin ? 'Admin' : 'Customer');
+  setText('instructor-profile-email', displayEmail);
+  setText('profile-email', displayEmail);
+  setText('instructor-profile-name', displayName);
+  setText('profile-name', displayName);
+
+  function setInputValue(id, value) {
+    var el = document.getElementById(id);
+    if (el && 'value' in el) el.value = value;
+  }
+  setInputValue('instructor-email', displayEmail);
+  setInputValue('profile-email-input', displayEmail);
+
+  var nameParts = displayName.split(/\s+/);
+  var firstName = nameParts[0] || displayName;
+  var lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+  setInputValue('instructor-fname', firstName);
+  setInputValue('instructor-lname', lastName);
+  setInputValue('profile-fname', firstName);
+  setInputValue('profile-lname', lastName || 'Founder');
+
+  
+  function handleLogout(e) {
+    if (e) e.preventDefault();
+    try {
+      localStorage.removeItem('stackly_user');
+      sessionStorage.removeItem('stacklyUserEmail');
+      sessionStorage.removeItem('stacklyUserRole');
+    } catch (err) {}
+    window.location.href = 'index.html';
+  }
+  ['instructor-logout-btn', 'logout-btn', 'header-logout'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', handleLogout);
+  });
+
+
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      if (loader) loader.classList.add('is-hidden');
+    }, 450);
+  });
+  setTimeout(function () {
+    if (loader) loader.classList.add('is-hidden');
+  }, 1800);
+})();

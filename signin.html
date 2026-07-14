@@ -1,264 +1,1265 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <title>Sign In - Stackly Startup Agency</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign In to Stackly - design sprints, MVP builds, and founder workspaces." />
+  <meta name="theme-color" content="#b4e019" />
+  <link rel="icon" href="assets/top-logo.webp" type="image/webp" sizes="32x32" />
+  <title>Sign In - Stackly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --clr-primary: #b4e019;
+      --clr-primary-light: rgba(180, 224, 25, 0.28);
+      --clr-primary-pale: rgba(45, 30, 226, 0.12);
+      --clr-accent: #2d1ee2;
+      --clr-bg: #0F0F12;
+      --clr-white: #ffffff;
+      --clr-border: #2D3748;
+      --clr-text-dark: #FFFFFF;
+      --clr-text-body: #A0AEC0;
+      --clr-text-muted: #6C7289;
+      --clr-text-light: #A0AEC0;
+
+      --r-md: 12px;
+      --r-lg: 16px;
+      --r-full: 9999px;
+
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --dur-base: 0.25s;
+      --font-heading: 'Syne', sans-serif;
+    }
+    .signin-page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      overflow-x: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+    .signin-visual {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; 
+      padding: 6.5rem 3rem 3rem; 
+      overflow: hidden;
+      background: #0a0a0c;
+    }
+    .signin-visual__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/ant-rozetsky-HXOllTSwrpM-unsplash.webp') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 0.38 !important; 
+      z-index: 0;
+    }
+    .signin-visual__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10, 10, 12, 0.76) 0%, rgba(15, 23, 42, 0.5) 100%) !important; 
+      z-index: 1;
+    }
+    .signin-visual__pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .signin-visual__content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .signin-visual .logo-brand,
+    .signin-form-side .logo-brand {
+      font-family: 'Sora', sans-serif !important;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .signin-visual .logo-brand img,
+    .signin-form-side .logo-brand img,
+    .auth-form-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+    .signin-visual .logo-brand .logo-accent,
+    .signin-form-side .logo-brand .logo-accent { color: #b4e019; }
+    .signin-visual .logo-brand i,
+    .signin-form-side .logo-brand i { color: #b4e019; font-size: 1.2rem; }
 
     
-    <link rel="shortcut icon" href="assets/top-logo.webp" type="image/x-icon" />
-    <link rel="icon" href="assets/top-logo.webp" type="image/x-icon" />
+    .visual-copy {
+      text-align: center;
+      margin-bottom: 2rem;
+      width: 100%;
+      z-index: 2;
+    }
+    .copy-badge {
+      font-family: 'Sora', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--clr-primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: rgba(180, 224, 25, 0.18);
+      padding: 0.4rem 1rem;
+      border-radius: var(--r-full);
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1.5px solid rgba(180, 224, 25, 0.25);
+    }
+    .copy-title {
+      font-family: 'Sora', sans-serif !important;
+      font-size: 2.1rem; 
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.1rem;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+    .copy-desc {
+      font-family: 'Sora', sans-serif !important;
+      font-size: 0.95rem; 
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.7;
+      max-width: 440px;
+      margin: 0 auto;
+    }
 
     
-    <link href="https://php.kodesolution.com/2025/techix-php/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://php.kodesolution.com/2025/techix-php/css/style.css" rel="stylesheet" />
-    <link href="https://php.kodesolution.com/2025/techix-php/css/responsive.css" rel="stylesheet" />
+    .mini-animation-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      z-index: 2;
+    }
+    .node-map {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .map-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .core-node {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: var(--clr-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a0a0c;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px 4px rgba(180, 224, 25, 0.4);
+      z-index: 3;
+      animation: pulse-core 2s infinite alternate;
+    }
+    .sat-node {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      z-index: 3;
+      transition: all 0.3s ease;
+    }
+    .sat-node span {
+      position: absolute;
+      top: 38px;
+      font-family: monospace;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.5px;
+    }
+    .sat-node--tl { top: 16px; left: 16px; }
+    .sat-node--tr { top: 16px; right: 16px; }
+    .sat-node--bl { bottom: 16px; left: 16px; }
+    .sat-node--br { bottom: 16px; right: 16px; }
+    
+    .sat-node:hover {
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 10px rgba(180, 224, 25, 0.3);
+      color: var(--clr-primary);
+    }
+    
+    
+    .flow-path {
+      stroke: var(--clr-primary);
+      stroke-width: 2px;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 8 20;
+      animation: dash-flow 2s infinite linear;
+    }
+    .flow-path--tl { animation-delay: 0s; }
+    .flow-path--tr { animation-delay: 0.5s; }
+    .flow-path--bl { animation-delay: 1s; }
+    .flow-path--br { animation-delay: 1.5s; }
+
+    @keyframes pulse-core {
+      0% { transform: translate(-50%, -50%) scale(0.95); box-shadow: 0 0 15px 2px rgba(180, 224, 25, 0.3); }
+      100% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 25px 8px rgba(180, 224, 25, 0.55); }
+    }
+    @keyframes dash-flow {
+      to {
+        stroke-dashoffset: -28;
+      }
+    }
+    .form-back-btn {
+      padding: 0.45rem 1rem;
+      border-radius: var(--r-full);
+      background: rgba(45, 30, 226, 0.12);
+      border: 1.5px solid rgba(45, 30, 226, 0.45);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #b4e019;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all var(--dur-base) var(--ease);
+      width: fit-content;
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+    .form-back-btn:hover {
+      color: #d4ff3c;
+      background: rgba(45, 30, 226, 0.22);
+      border-color: rgba(45, 30, 226, 0.65);
+      transform: translateY(-2px);
+    }
+    .form-back-btn i {
+      font-size: 0.8rem;
+      transition: transform var(--dur-base) var(--ease);
+    }
+    .form-back-btn:hover i {
+      transform: translateX(-3px);
+    }
+    .auth-form-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+    .auth-form-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .signin-form-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 3.5rem;
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.99) 60%, rgba(15, 23, 42, 1) 100%);
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      min-width: 0;
+      width: 100%;
+    }
+    .signin-form-side__inner {
+      width: 100%;
+      max-width: 440px;
+    }
+    .signin-form-box__header {
+      margin-bottom: 2rem;
+    }
+    .signin-form-box__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .signin-form-box__logo img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+    .signin-form-box__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--clr-text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .signin-form-box__sub {
+      font-size: 0.9rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+    }
+    .role-selector {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .role-option {
+      position: relative;
+      cursor: pointer;
+    }
+    .role-option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .role-option__card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 1.25rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+      min-height: 150px;
+      position: relative;
+      overflow: hidden;
+    }
+    .role-option__card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(180, 224, 25, 0.05) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .role-option__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0.1rem;
+      z-index: 1;
+    }
+    .role-option__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    .role-option__badge {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .role-option__card i {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.5);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1;
+      margin-top: 0.25rem;
+    }
+    .role-option__title {
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #fff;
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+    .role-option__desc {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.35;
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+    .signin-form-group {
+      margin-bottom: 1.1rem;
+      position: relative;
+    }
+    .signin-form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--clr-text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .signin-form-label .required {
+      color: #E53E3E;
+      margin-left: 2px;
+    }
+    .signin-form-input {
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      background: var(--clr-white);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--r-md);
+      font-size: 0.9rem;
+      color: var(--clr-text-dark);
+      transition: border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+    }
+    .signin-form-input:focus {
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.10);
+      outline: none;
+    }
+    .signin-form-input::placeholder {
+      color: var(--clr-text-light);
+    }
+    .signin-form-input.error {
+      border-color: #E53E3E;
+      box-shadow: 0 0 0 3.5px rgba(229, 62, 62, 0.10);
+    }
+    .signin-form-group__icon {
+      position: absolute;
+      left: 1rem;
+      bottom: 0.9rem;
+      color: var(--clr-text-muted);
+      font-size: 0.95rem;
+      transition: color var(--dur-base) var(--ease);
+      pointer-events: none;
+    }
+    .signin-form-input:focus + .signin-form-group__icon,
+    .signin-form-group:focus-within .signin-form-group__icon {
+      color: var(--clr-primary);
+    }
+    .signin-form-error {
+      font-size: 0.78rem;
+      color: #E53E3E;
+      margin-top: 0.3rem;
+      display: none;
+      animation: slide-down 0.2s var(--ease);
+    }
+    .signin-form-group.has-error .signin-form-error {
+      display: block;
+    }
+    .signin-form-group.has-error .signin-form-input {
+      border-color: #E53E3E;
+      box-shadow: 0 0 0 3.5px rgba(229, 62, 62, 0.10);
+    }
+    .password-wrap {
+      position: relative;
+    }
+    .password-toggle {
+      position: absolute;
+      right: 0.55rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--clr-text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.4rem;
+      min-width: 2.25rem;
+      min-height: 2.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      pointer-events: auto;
+      touch-action: manipulation;
+      transition: color var(--dur-base) var(--ease);
+      line-height: 1;
+    }
+    .password-toggle:hover,
+    .password-toggle:focus-visible {
+      color: var(--clr-primary);
+      outline: none;
+    }
+    .password-wrap .signin-form-group__icon {
+      pointer-events: none;
+      z-index: 1;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+      display: none;
+    }
+    .signin-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    .remember-me input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--clr-primary);
+      cursor: pointer;
+    }
+    .remember-me span {
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+    }
+    .forgot-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: color var(--dur-base) var(--ease);
+    }
+    .forgot-link:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .signin-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--clr-primary);
+      color: #0a0a0a;
+      border: none;
+      border-radius: var(--r-full);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--dur-base) var(--ease);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .signin-submit::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity var(--dur-fast) var(--ease);
+      pointer-events: none;
+    }
+    .signin-submit:hover::after {
+      opacity: 1;
+    }
+    .signin-submit:hover {
+      background: var(--clr-primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-green);
+    }
+    .signin-submit:active {
+      transform: scale(0.98);
+    }
+    .signin-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .signin-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-block: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--clr-text-muted);
+    }
+    .signin-divider::before,
+    .signin-divider::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: var(--clr-border);
+    }
+    .social-auth {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .social-auth-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem;
+      background: var(--clr-white);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--r-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--clr-text-dark);
+      cursor: pointer;
+      transition: all var(--dur-base) var(--ease);
+    }
+    .social-auth-btn:hover {
+      border-color: var(--clr-primary);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+    .social-auth-btn i {
+      font-size: 1rem;
+    }
+    .social-auth-btn.google i { color: #DB4437; }
+    .social-auth-btn.facebook i { color: #1877F2; }
+    .signin-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+      margin-top: 1.5rem;
+    }
+    .signin-footer a {
+      color: var(--clr-primary);
+      font-weight: 600;
+      transition: color var(--dur-base) var(--ease);
+    }
+    .signin-footer a:hover {
+      color: var(--clr-accent);
+    }
+    .role-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 1rem;
+      border-radius: 12px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: slide-down 0.3s var(--ease);
+      width: 100%;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+    .role-badge--admin {
+      background: rgba(168, 85, 247, 0.1);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.25);
+    }
+    .role-badge--customer {
+      background: rgba(180, 224, 25, 0.1);
+      color: var(--clr-primary);
+      border: 1px solid rgba(180, 224, 25, 0.25);
+    }
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--clr-white);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+    .signin-submit.loading .spinner {
+      display: block;
+    }
+    .signin-submit.loading .btn-text {
+      display: none;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .signin-toast {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 0.95rem 1.4rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      z-index: 9999;
+      max-width: 340px;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transform: translateY(-50px) scale(0.9);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-family: 'Sora', sans-serif !important;
+    }
+    .signin-toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .signin-toast--success {
+      border: 1.5px solid rgba(34, 197, 94, 0.35) !important;
+      background: rgba(10, 25, 15, 0.85) !important;
+      color: #4ade80 !important;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2) !important;
+    }
+    .signin-toast--error {
+      border: 1.5px solid rgba(239, 68, 68, 0.35) !important;
+      background: rgba(28, 10, 10, 0.85) !important;
+      color: #f87171 !important;
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2) !important;
+    }
+    .signin-form-side .signin-form-box__title { color: var(--clr-white); }
+    .signin-form-side .signin-form-box__sub { color: rgba(255,255,255,0.7); }
+    .signin-form-side .signin-form-label { color: rgba(255,255,255,0.9); }
+    .signin-form-side .remember-me span { color: rgba(255,255,255,0.7); }
+    .signin-form-side .signin-footer { color: rgba(255,255,255,0.65); }
+    .signin-form-side .signin-footer a { color: var(--clr-accent); }
+    .signin-form-side .forgot-link { color: #ffffff; }
+    .signin-form-side .forgot-link:hover { color: rgba(255, 255, 255, 0.85); }
+    .signin-form-side .signin-divider { color: rgba(255,255,255,0.5); }
+    .signin-form-side .signin-divider::before,
+    .signin-form-side .signin-divider::after { background: rgba(255,255,255,0.15); }
+    .signin-form-side .signin-form-input {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--clr-white);
+    }
+    .signin-form-side .signin-form-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .signin-form-side .signin-form-input:focus {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--clr-accent);
+      box-shadow: 0 0 0 3.5px rgba(56, 189, 248, 0.15);
+    }
+    .signin-form-side .signin-form-group__icon {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .signin-form-side .signin-form-input:focus + .signin-form-group__icon,
+    .signin-form-side .signin-form-group:focus-within .signin-form-group__icon {
+      color: var(--clr-accent);
+    }
+    .signin-form-side .password-toggle {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .signin-form-side .password-toggle:hover,
+    .signin-form-side .password-toggle:focus {
+      color: var(--clr-accent);
+    }
+    .signin-form-side .role-option input:checked + .role-option__card {
+      border-color: var(--clr-primary);
+      background: rgba(180, 224, 25, 0.08);
+      box-shadow: 0 0 20px rgba(180, 224, 25, 0.15);
+      transform: translateY(-3px);
+    }
+    .signin-form-side .role-option input:checked + .role-option__card::before {
+      opacity: 1;
+    }
+    .signin-form-side .role-option input:checked + .role-option__card i {
+      color: var(--clr-primary);
+      transform: scale(1.1) rotate(5deg);
+    }
+    .signin-form-side .role-option input:checked + .role-option__card .role-option__title {
+      color: var(--clr-primary);
+    }
+    .signin-form-side .role-option input:checked + .role-option__card .role-option__desc {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .signin-form-side .role-option input:checked + .role-option__card .role-option__dot--admin {
+      background: #a855f7;
+      box-shadow: 0 0 10px 2px #a855f7;
+    }
+    .signin-form-side .role-option input:checked + .role-option__card .role-option__dot--customer {
+      background: var(--clr-primary);
+      box-shadow: 0 0 10px 2px var(--clr-primary);
+    }
+    .signin-form-side .role-option__card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(180, 224, 25, 0.25);
+      transform: translateY(-3px);
+    }
 
     
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <style>
-        .logo img,
-        .sticky-header .logo img {
-            max-height: 40px;
-            filter: none;
-        }
-
-        .footer-one__logo .logo img {
-            filter: none;
-        }
-
-        .auth-container {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .auth-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            width: 100%;
-            max-width: 500px;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    .signin-form-side.theme-admin .signin-submit {
+      background: #a855f7;
+      color: #ffffff;
+    }
+    .signin-form-side.theme-admin .signin-submit:hover {
+      background: #b56ff9;
+      box-shadow: 0 8px 24px rgba(168, 85, 247, 0.45);
+    }
+    .signin-form-side.theme-admin .signin-form-input:focus {
+      border-color: #a855f7;
+      box-shadow: 0 0 0 3.5px rgba(168, 85, 247, 0.2);
+    }
+    .signin-form-side.theme-admin .signin-form-input:focus + .signin-form-group__icon,
+    .signin-form-side.theme-admin .signin-form-group:focus-within .signin-form-group__icon {
+      color: #a855f7;
+    }
+    .signin-form-side.theme-admin .password-toggle:hover,
+    .signin-form-side.theme-admin .password-toggle:focus {
+      color: #a855f7;
+    }
+    .signin-form-side .signin-submit:hover {
+      background: #d4ff3c;
+      color: #0a0a0a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(180, 224, 25, 0.35);
+    }
+    .signin-form-side .social-auth-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--clr-white);
+    }
+    .signin-form-side .social-auth-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    @media (max-width: 1024px) {
+      .signin-page { grid-template-columns: 1fr; }
+      .signin-visual { display: none; }
+      .signin-form-side { padding: 2.5rem 2rem; }
+      .signin-mobile-back { display: inline-flex; color: var(--clr-accent); }
+    }
+    @media (max-width: 768px) {
+      .auth-form-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        margin-bottom: 1.25rem;
+        min-height: 0;
+      }
+      .form-back-btn {
+        position: static;
+        align-self: flex-end;
+        margin-top: 0.65rem;
+        box-shadow: none;
+      }
+    }
+    @media (max-width: 576px) {
+      .signin-form-side { padding: 1.75rem 1rem; }
+      .auth-form-top { gap: 0.75rem; }
+      .form-back-btn { font-size: 0.85rem; padding: 0.4rem 0.85rem; }
+    }
+    @media (max-width: 480px) {
+      .signin-form-side { padding: 1.75rem 1.25rem; }
+      .signin-form-box__title { font-size: 1.4rem; }
+      .role-selector { gap: 0.5rem; }
+      .role-option__card { padding: 1rem 0.5rem; }
+      .social-auth { flex-direction: column; }
+    }
+  </style>
 </head>
-
 <body>
+<div class="signin-toast" id="signinToast" role="alert" aria-live="polite"></div>
+<div class="signin-page">
+  <div class="signin-visual" aria-hidden="true">
+    <div class="signin-visual__bg"></div>
+    <div class="signin-visual__overlay"></div>
+    <div class="signin-visual__pattern"></div>
+    <div class="signin-visual__content">
+      <div class="signin-logo-wrap" style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem; gap: 0.5rem;">
+        <a href="index.html" class="logo-brand"><img src="assets/logo.webp" alt="Stackly Logo" /></a>
+      </div>
+      
+      <div class="visual-copy">
+        <span class="copy-badge">WELCOME BACK</span>
+        <h2 class="copy-title">Access Your Startup Suite</h2>
+        <p class="copy-desc">Welcome back to Stackly. Access your Salem incubator account to monitor live project velocities, coordinate wireframe design sprints, and deploy backend server environments. Your dedicated engineering panel is ready to build.</p>
+      </div>
 
+      <div class="mini-animation-wrap">
+        <div class="node-map">
+          
+          <svg class="map-lines" viewBox="0 0 200 200">
+            <path d="M 30,30 L 100,100" class="flow-path flow-path--tl" />
+            <path d="M 170,30 L 100,100" class="flow-path flow-path--tr" />
+            <path d="M 30,170 L 100,100" class="flow-path flow-path--bl" />
+            <path d="M 170,170 L 100,100" class="flow-path flow-path--br" />
+          </svg>
+
+          
+          <div class="core-node">
+            <i class="fa-solid fa-server"></i>
+          </div>
+
+          
+          <div class="sat-node sat-node--tl" title="Salem Node">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>SALEM</span>
+          </div>
+          <div class="sat-node sat-node--tr" title="Database Node">
+            <i class="fa-solid fa-database"></i>
+            <span>DB-01</span>
+          </div>
+          <div class="sat-node sat-node--bl" title="API Gateway">
+            <i class="fa-solid fa-cloud"></i>
+            <span>API</span>
+          </div>
+          <div class="sat-node sat-node--br" title="Client Gateway">
+            <i class="fa-solid fa-lock"></i>
+            <span>SECURE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="signin-form-side">
+    <div class="signin-form-side__inner">
+      <div class="signin-form-box__header">
+        <div class="auth-form-top">
+          <a href="index.html" class="auth-form-logo">
+            <img src="assets/logo.webp" alt="Stackly">
+          </a>
+          <a href="index.html" class="form-back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+          </a>
+        </div>
+        <h1 class="signin-form-box__title">Sign In to Your Account</h1>
+        <p class="signin-form-box__sub">Choose your role and enter your credentials to open your Stackly workspace.</p>
+      </div>
+      <div class="role-selector" id="roleSelector">
+        <label class="role-option">
+          <input type="radio" name="role" value="admin" id="roleAdmin" />
+          <div class="role-option__card">
+            <div class="role-option__header">
+              <span class="role-option__dot role-option__dot--admin"></span>
+              <span class="role-option__badge">Admin Control</span>
+            </div>
+            <i class="fa-solid fa-user-shield"></i>
+            <span class="role-option__title">Admin Portal</span>
+            <span class="role-option__desc">Assign tasks, manage sprints, and control settings.</span>
+          </div>
+        </label>
+        <label class="role-option">
+          <input type="radio" name="role" value="customer" id="roleCustomer" checked />
+          <div class="role-option__card">
+            <div class="role-option__header">
+              <span class="role-option__dot role-option__dot--customer"></span>
+              <span class="role-option__badge">Client Desk</span>
+            </div>
+            <i class="fa-solid fa-user"></i>
+            <span class="role-option__title">Customer Area</span>
+            <span class="role-option__desc">Monitor active builds, sprints, and review logs.</span>
+          </div>
+        </label>
+      </div>
+      <div id="roleBadge" class="role-badge role-badge--customer">
+        <i class="fa-solid fa-circle-check fa-pulse" style="--fa-animation-duration: 2.5s; font-size: 0.85rem;"></i> CLIENT DESK: CUSTOMER CHANNEL // ACTIVE_SESSION
+      </div>
+      <form id="signinForm" onsubmit="handleSignin(event)" novalidate>
+        <div class="signin-form-group" id="nameGroup">
+          <label class="signin-form-label" for="fullName">Full Name <span class="required">*</span></label>
+          <div style="position:relative;">
+            <input
+              class="signin-form-input"
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your name"
+              required
+              autocomplete="name"
+            />
+            <i class="fa-solid fa-user signin-form-group__icon"></i>
+          </div>
+          <span class="signin-form-error">Name contains only alphabets</span>
+        </div>
+        <div class="signin-form-group" id="emailGroup">
+          <label class="signin-form-label" for="email">Email Address <span class="required">*</span></label>
+          <div style="position:relative;">
+            <input
+              class="signin-form-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@mail.com"
+              required
+              autocomplete="email"
+            />
+            <i class="fa-solid fa-envelope signin-form-group__icon"></i>
+          </div>
+          <span class="signin-form-error">Please enter a valid email address</span>
+        </div>
+        <div class="signin-form-group" id="passwordGroup">
+          <label class="signin-form-label" for="password">Password <span class="required">*</span></label>
+          <div class="password-wrap" style="position:relative;">
+            <input
+              class="signin-form-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+              minlength="8"
+              autocomplete="off"
+              style="padding-right:3rem;"
+            />
+            <i class="fa-solid fa-lock signin-form-group__icon"></i>
+            <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password" aria-pressed="false">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <span class="signin-form-error">Password must be at least 8 characters</span>
+        </div>
+        <div class="signin-options">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe" name="rememberMe" />
+            <span>Remember me</span>
+          </label>
+          <a href="404.html" class="forgot-link">Forgot password?</a>
+        </div>
+        <button type="submit" class="signin-submit" id="signinSubmit">
+          <span class="spinner"></span>
+          <span class="btn-text"><i class="fa-solid fa-right-to-bracket"></i> Sign In</span>
+        </button>
+      </form>
+      <div class="signin-divider">or continue with</div>
+      <div class="social-auth">
+        <button type="button" class="social-auth-btn google" onclick="handleSocialSignin('Google')">
+          <svg style="width:18px; height:18px; margin-right:8px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+          </svg> Google
+        </button>
+        <button type="button" class="social-auth-btn facebook" onclick="handleSocialSignin('Facebook')">
+          <i class="fa-brands fa-facebook" style="color: #1877F2; font-size: 1.1rem; margin-right: 8px;"></i> Facebook
+        </button>
+      </div>
+      <p class="signin-footer">
+        Don't have an account? <a href="signup.html">Create free account</a>
+      </p>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+function showSigninToast(msg, type = 'success') {
+  const t = document.getElementById('signinToast');
+  const icon = type === 'success' 
+    ? '<i class="fa-solid fa-circle-check" style="font-size: 1.15rem; color: #4ade80;"></i>'
+    : '<i class="fa-solid fa-circle-xmark" style="font-size: 1.15rem; color: #f87171;"></i>';
+  t.innerHTML = icon + ' <span>' + msg + '</span>';
+  t.className = 'signin-toast signin-toast--' + type + ' show';
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+const roleInputs = document.querySelectorAll('input[name="role"]');
+const roleBadge = document.getElementById('roleBadge');
+const formSide = document.querySelector('.signin-form-side');
+
+
+if (formSide) formSide.classList.add('theme-customer');
+
+roleInputs.forEach(input => {
+  input.addEventListener('change', () => {
+    const role = input.value;
+    const isAdmin = role === 'admin';
+    roleBadge.className = 'role-badge ' + (isAdmin ? 'role-badge--admin' : 'role-badge--customer');
+    roleBadge.innerHTML = isAdmin
+      ? '<i class="fa-solid fa-shield-halved fa-beat" style="--fa-animation-duration: 2.5s; font-size: 0.85rem;"></i> SYSTEM CONSOLE: ADMIN ACCESS // SECURE_DESK_CONNECTED'
+      : '<i class="fa-solid fa-circle-check fa-pulse" style="--fa-animation-duration: 2.5s; font-size: 0.85rem;"></i> CLIENT DESK: CUSTOMER CHANNEL // ACTIVE_SESSION';
     
-    <div class="page-wrapper">
-        
-        <div id="custom-cursor-wrapper" class="tp-cursor">
-            <div id="cursor-outer">
-                <div id="cursorDot"></div>
-            </div>
-        </div>
+    if (formSide) {
+      if (isAdmin) {
+        formSide.classList.add('theme-admin');
+        formSide.classList.remove('theme-customer');
+      } else {
+        formSide.classList.add('theme-customer');
+        formSide.classList.remove('theme-admin');
+      }
+    }
+  });
+});
+function validateName(name) {
+  return /^[a-zA-Z\s]+$/.test(name) && name.trim().length >= 1;
+}
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function validatePassword(pw) {
+  return pw.length >= 8;
+}
+function handleSignin(e) {
+  e.preventDefault();
+  const submitBtn = document.getElementById('signinSubmit');
+  const nameGroup = document.getElementById('nameGroup');
+  const emailGroup = document.getElementById('emailGroup');
+  const passwordGroup = document.getElementById('passwordGroup');
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const role = document.querySelector('input[name="role"]:checked').value;
+  let isValid = true;
 
-        
-        <header class="main-header header-style-one header-1">
-            <div class="auto-container">
-                <div class="header-lower">
-                    <div class="main-box">
-                        <div class="nav-outer">
-                            <div class="logo-box">
-                                <div class="logo">
-                                    <a href="index.html" title="Stackly"><img src="assets/logo.webp" alt="Stackly" title="Stackly"></a>
-                                </div>
-                            </div>
-                            <div class="outer-box">
-                                <nav class="nav main-menu">
-                                    <ul class="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+  if (!validateName(name)) {
+    nameGroup.classList.add('has-error');
+    isValid = false;
+  } else {
+    nameGroup.classList.remove('has-error');
+  }
 
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="nav-right d-flex align-items-center">
-                                <button class="ui-btn search-btn me-4" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
-                                <a href="get-started.html" class="header-btn">Get Started</a>
-                                <div class="mobile-nav-toggler d-flex d-xl-none style-2">
-                                    <span></span><span></span><span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  if (!validateEmail(email)) {
+    emailGroup.classList.add('has-error');
+    isValid = false;
+  } else {
+    emailGroup.classList.remove('has-error');
+  }
 
-            
-            <div class="mobile-menu">
-                <div class="menu-backdrop"></div>
-                <nav class="menu-box">
-                    <div class="upper-box">
-                        <div class="nav-logo"><a href="index.html"><img src="assets/logo.webp" alt="Stackly" /></a></div>
-                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
-                    </div>
-                    <ul class="navigation clearfix"></ul>
-                    <ul class="contact-list-one">
-                        <li>
-                            <div class="contact-info-box">
-                                <i class="icon lnr-icon-phone-handset"></i>
-                                <span class="title">Call Now</span>
-                                <a href="tel:+919876543210">+91 98765 43210</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+  if (!validatePassword(password)) {
+    passwordGroup.classList.add('has-error');
+    isValid = false;
+  } else {
+    passwordGroup.classList.remove('has-error');
+  }
+  if (!isValid) {
+    showSigninToast('Please fix the errors in the form.', 'error');
+    return;
+  }
 
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
 
-                
-                <section class="page-title" style="background-image: url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80);">
-                    <div class="auto-container">
-                        <div class="title-outer text-center">
-                            <h1 class="title">Sign In</h1>
-                            <ul class="page-breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li>Sign In</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+  setTimeout(() => {
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
 
-                
-                <section class="auth-container section-bg">
-                    <div class="auto-container d-flex justify-content-center">
-                        <div class="auth-box ks_fade_anim" data-delay=".3" data-fade-from="top">
-                            <div class="text-center mb-4">
-                                <h3 class="mb-2 text-dark">Welcome Back</h3>
-                                <p class="text-muted">Sign in to your Stackly Dashboard</p>
-                            </div>
-                            <form action="customer-dashboard.html">
-                                <div class="form-group mb-4">
-                                    <label class="mb-2 fw-bold text-dark">Email Address</label>
-                                    <input type="email" class="form-control p-3" placeholder="Enter your email" required>
-                                </div>
-                                <div class="form-group mb-4">
-                                    <label class="mb-2 fw-bold text-dark">Password</label>
-                                    <input type="password" class="form-control p-3" placeholder="Enter your password" required>
-                                </div>
-                                <div class="d-flex justify-content-between mb-4">
-                                    <label class="text-muted"><input type="checkbox" class="me-2"> Remember Me</label>
-                                    <a href="404.html" style="color: var(--theme-color1);">Forgot Password?</a>
-                                </div>
-                                <button type="submit" class="theme-btn-main w-100 border-0" style="cursor: pointer;">
-                                    <span class="theme-btn">Sign In to Dashboard</span>
-                                </button>
-                            </form>
-                            <p class="text-center mt-4 text-muted">Don't have an account? <a href="get-started.html" class="fw-bold" style="color: var(--theme-color1);">Get Started</a></p>
-                        </div>
-                    </div>
-                </section>
+    localStorage.setItem('stackly_user', JSON.stringify({
+      name: name,
+      email: email,
+      role: role,
+      loggedIn: true,
+      loginTime: new Date().toISOString()
+    }));
+    showSigninToast('Welcome back, ' + name + '! Redirecting to dashboard...', 'success');
 
-                <section class="stk-extra section-padding">
-                    <div class="auto-container">
-                        <div class="section-title text-center mb-4">
-                            <div class="sub-title"><div class="dot"></div><span>How We Work</span></div>
-                            <h2 class="title">A clear path from idea to launch</h2>
-                        </div>
-                        <div class="stk-steps">
-                            <div class="stk-step"><div class="num">1</div><h4>Discover</h4><p>Workshops and research to lock goals and audience.</p></div>
-                            <div class="stk-step"><div class="num">2</div><h4>Design</h4><p>Brand, UX, and prototypes your users will love.</p></div>
-                            <div class="stk-step"><div class="num">3</div><h4>Build</h4><p>Modern web products engineered for speed and scale.</p></div>
-                            <div class="stk-step"><div class="num">4</div><h4>Grow</h4><p>Launch, measure, and iterate with growth partners.</p></div>
-                        </div>
-                    </div>
-                </section>
+    setTimeout(() => {
+      window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'customer-dashboard.html';
+    }, 1500);
+  }, 1500);
+}
+function handleSocialSignin(provider) {
+  showSigninToast('Signing in with ' + provider + '...', 'success');
+  setTimeout(() => {
+    const role = document.querySelector('input[name="role"]:checked').value;
+    localStorage.setItem('stackly_user', JSON.stringify({
+      name: 'Social User',
+      email: 'user@' + provider.toLowerCase() + '.com',
+      role: role,
+      loggedIn: true,
+      loginTime: new Date().toISOString(),
+      provider: provider
+    }));
+    window.location.href = role === 'admin' ? 'admin-dashboard.html' : 'customer-dashboard.html';
+  }, 1500);
+}
+document.getElementById('fullName').addEventListener('blur', function() {
+  const group = document.getElementById('nameGroup');
+  if (this.value.trim() && !validateName(this.value.trim())) {
+    group.classList.add('has-error');
+  } else {
+    group.classList.remove('has-error');
+  }
+});
+document.getElementById('email').addEventListener('blur', function() {
+  const group = document.getElementById('emailGroup');
+  if (this.value.trim() && !validateEmail(this.value.trim())) {
+    group.classList.add('has-error');
+  } else {
+    group.classList.remove('has-error');
+  }
+});
+document.getElementById('password').addEventListener('blur', function() {
+  const group = document.getElementById('passwordGroup');
+  if (this.value && !validatePassword(this.value)) {
+    group.classList.add('has-error');
+  } else {
+    group.classList.remove('has-error');
+  }
+});
+document.querySelectorAll('.signin-form-input').forEach(input => {
+  input.addEventListener('input', function() {
+    this.closest('.signin-form-group').classList.remove('has-error');
+  });
+});
 
-                <section class="stk-extra section-padding section-bg">
-                    <div class="auto-container">
-                        <div class="section-title text-center mb-4">
-                            <div class="sub-title"><div class="dot"></div><span>Insights</span></div>
-                            <h2 class="title">Secure access to your workspace</h2>
-                        </div>
-                        <div class="stk-extra__grid">
-                            <article class="stk-extra__card">
-                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="" />
-                                <div class="body"><h3>Client portals</h3><p>Secure spaces for files, feedback, and approvals.</p></div>
-                            </article>
-                            <article class="stk-extra__card">
-                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80" alt="" />
-                                <div class="body"><h3>Project hubs</h3><p>One place for timelines, assets, and status updates.</p></div>
-                            </article>
-                            <article class="stk-extra__card">
-                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="" />
-                                <div class="body"><h3>Support desks</h3><p>Help when you need it without leaving your workspace.</p></div>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+(function initPasswordToggles() {
+  function bindToggle(btnId, inputId) {
+    var btn = document.getElementById(btnId);
+    var input = document.getElementById(inputId);
+    if (!btn || !input) return;
+    var icon = btn.querySelector('i');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      if (icon) {
+        icon.classList.toggle('fa-eye', !show);
+        icon.classList.toggle('fa-eye-slash', show);
+      }
+      btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+      btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+    });
+  }
+  bindToggle('passwordToggle', 'password');
+})();
 
-                <section class="stk-extra section-padding">
-                    <div class="auto-container">
-                        <div class="stk-banner" style="background-image:url(https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80);">
-                            <div class="inner">
-                                <h2>Let’s build your next chapter</h2>
-                                <p>Book a discovery call and get a clear plan for design, product, and growth.</p>
-                                <a class="theme-btn-main" href="get-started.html">
-                                    <span class="theme-btn-arrow-left"><i class="fa-solid fa-arrow-right-long"></i></span>
-                                    <span class="theme-btn">Get Started</span>
-                                    <span class="theme-btn-arrow-right"><i class="fa-solid fa-arrow-right-long"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                
-                <footer class="footer-wrapper footer-one section-bg-2">
-                    <div class="footer-one__bg-image bg-cover" style="background-image: url(https://php.kodesolution.com/2025/techix-php/images/home-1/footer/footer-bg.png);"></div>
-                    <div class="auto-container">
-                        <div class="footer-one__widget-inner">
-                            <div class="row pt-5">
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 ks_fade_anim" data-delay=".4">
-                                    <div class="footer-one__logo style-1 me-xl-5">
-                                        <div class="logo mb-4">
-                                            <img src="assets/logo.webp" alt="Stackly" />
-                                        </div>
-                                        <p>Stackly is your premium partner for building ultra-modern, interactive web experiences and driving startup growth.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <div class="auto-container">
-                            <div class="content">
-                                <p>© Copyright 2026 by Stackly Agency</p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-        </div>
-        
-
-        
-        <script src="https://php.kodesolution.com/2025/techix-php/js/jquery.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/popper.min.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/bootstrap.min.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-to-plugin.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-smoother.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-trigger.js"></script>
-        <script src="https://php.kodesolution.com/2025/techix-php/js/script.js"></script>
-
-</body>
-
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted) {
+    var form = document.getElementById('signinForm');
+    if (form) form.reset();
+    document.querySelectorAll('.signin-form-group').forEach(function(g) {
+      g.classList.remove('has-error');
+    });
+    var pwInput = document.getElementById('password');
+    if (pwInput) pwInput.type = 'password';
+    var pwIcon = document.querySelector('#passwordToggle i');
+    if (pwIcon) {
+      pwIcon.classList.add('fa-eye');
+      pwIcon.classList.remove('fa-eye-slash');
+    }
+  }
+});
+</script>
+  </body>
 </html>
