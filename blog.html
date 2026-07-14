@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Blog - Stackly | Business Startup Agency</title>
+
+    <link rel="shortcut icon" href="assets/top-logo.webp?v=2" type="image/x-icon" />
+    <link rel="icon" href="assets/top-logo.webp?v=2" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .hero-section.hero-1 .bg-image {
+            background-position: center;
+        }
+
+        .logo img,
+        .sticky-header .logo img {
+            max-height: 48px;
+            filter: none;
+        }
+        
+        .featured-article-img {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+        }
+        .featured-article-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .featured-article-img:hover img {
+            transform: scale(1.05);
+        }
+        .featured-article-img .reveal-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+            z-index: 2;
+        }
+        .topic-tag {
+            background-color: var(--bg-card);
+            border: 1.5px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .topic-tag:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css?v=20260714d" />
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- Custom Cursor -->
+        <div id="custom-cursor-wrapper" class="tp-cursor">
+            <div id="cursor-outer">
+                <div id="cursorDot"></div>
+            </div>
+        </div>
+
+        <!-- Preloader -->
+        <div id="preloader" class="preloader stk-boot">
+            <div class="stk-boot__stage">
+                <div class="stk-boot__orbit stk-boot__orbit--a"></div>
+                <div class="stk-boot__orbit stk-boot__orbit--b"></div>
+                <div class="stk-boot__orbit stk-boot__orbit--c"></div>
+                <div class="stk-boot__spark s1"></div>
+                <div class="stk-boot__spark s2"></div>
+                <div class="stk-boot__spark s3"></div>
+                <div class="stk-boot__spark s4"></div>
+                <div class="stk-boot__logo-wrap">
+                    <img class="stk-boot__logo" src="assets/logo.webp" alt="Stackly" />
+                </div>
+                <p class="stk-boot__label">Loading experience</p>
+                <div class="stk-boot__track"><span class="stk-boot__fill"></span></div>
+            </div>
+        </div>
+
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+        <!-- Header -->
+        <header class="main-header header-style-one header-1">
+            <div class="auto-container">
+                <div class="header-lower">
+                    <div class="main-box">
+                        <div class="nav-outer">
+                            <div class="logo-box">
+                                <div class="logo">
+                                    <a href="index.html" title="Stackly"><img src="assets/logo.webp?v=2" alt="Stackly" title="Stackly"></a>
+                                </div>
+                            </div>
+                            <div class="outer-box">
+                                <nav class="nav main-menu">
+                                    <ul class="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li class="current"><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="nav-right d-flex align-items-center">
+                                <button class="ui-btn search-btn me-4" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
+                                <a href="get-started.html" class="header-btn">Get Started</a>
+                                <div class="mobile-nav-toggler d-flex d-xl-none style-2">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <nav class="menu-box">
+                    <div class="upper-box">
+                        <div class="nav-logo"><a href="index.html"><img src="assets/logo.webp?v=2" alt="Stackly" /></a></div>
+                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
+                    </div>
+                    <ul class="navigation clearfix"></ul>
+                    <ul class="contact-list-one">
+                        <li>
+                            <div class="contact-info-box">
+                                <i class="icon lnr-icon-phone-handset"></i>
+                                <span class="title">Call Now</span>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-info-box">
+                                <span class="icon lnr-icon-envelope1"></span>
+                                <span class="title">Send Email</span>
+                                <a href="mailto:hello@stackly.agency">hello@stackly.agency</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href="404.html"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="404.html"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="404.html"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Search Popup -->
+            <div class="search-popup">
+                <span class="search-back-drop"></span>
+                <button class="close-search"><span class="fa fa-times"></span></button>
+                <div class="search-inner">
+                    <form method="get" action="404.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sticky Header -->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="logo">
+                            <a href="index.html" title="Stackly"><img src="assets/logo.webp?v=2" alt="Stackly" title="Stackly"></a>
+                        </div>
+                        <div class="nav-outer">
+                            <nav class="main-menu">
+                                <div class="navbar-collapse show collapse clearfix">
+                                    <ul class="navigation clearfix"></ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="nav-right d-flex align-items-center">
+                            <div class="mobile-nav-toggler style-2 me-4">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <button class="ui-btn search-btn me-4 d-none d-lg-block" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
+                            <a href="get-started.html" class="header-btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <main>
+                    <!-- Page Hero -->
+                    <section class="page-hero page-hero-bg" style="--page-hero-bg: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80');">
+                        <div class="container">
+                            <div class="section-header reveal zoom-in">
+                                <span class="section-subtitle">Insights</span>
+                                <h1 class="section-title split-text">The <span>Stackly Startup Blog</span></h1>
+                                <p class="section-desc">Strategic design insights, component engineering articles, and SaaS acquisition guidelines from our execution leads.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Featured Article Section -->
+                    <section class="section-padding" style="padding-top: 60px; padding-bottom: 30px;">
+                        <div class="container">
+                            <div class="row align-items-center g-0" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);">
+                                <div class="col-lg-7 p-0">
+                                    <div class="featured-article-img">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="SaaS Server Analytics" />
+                                        <div class="reveal-content">
+                                            <span class="blog-tag" style="background: var(--primary); color: #000; border-color: var(--primary);">Featured</span>
+                                            <h2 style="color: #fff; margin-top: 15px; font-family: var(--font-display); font-weight: 800;">The Future of Headless SaaS Products in 2027</h2>
+                                            <p style="color: #ccc; margin-top: 10px; font-size: 0.95rem;">Exploring the shift towards decoupled headless frontend systems that load under 100ms globally.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 p-5" style="background-color: var(--bg-card); display: flex; flex-direction: column; justify-content: center; height: 380px;">
+                                    <span class="blog-date" style="color: var(--text-light); font-size: 0.85rem;"><i class="fas fa-calendar-alt me-2"></i> July 12, 2026</span>
+                                    <h3 style="font-family: var(--font-display); font-size: 1.6rem; margin: 15px 0; font-weight: 700; color: #fff;">Why we design using strict component tokens</h3>
+                                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">Standardized Figma components allowed us to reduce design-to-development handoff errors by 3x. Here's a deep-dive breakdown.</p>
+                                    <div>
+                                        <a href="404.html" class="tj-primary-btn btn-simple"><span class="btn-text">Read Full Story</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Explore Topics Tag list -->
+                    <section class="section-padding" style="padding: 30px 0;">
+                        <div class="container text-center">
+                            <h4 style="color: var(--text-muted); margin-bottom: 24px; font-weight: 500; font-size: 1rem;">Explore Topics</h4>
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+                                <a href="404.html" class="topic-tag">UI/UX Design</a>
+                                <a href="404.html" class="topic-tag" style="border-color: var(--secondary); color: var(--secondary);">Startup MVPs</a>
+                                <a href="404.html" class="topic-tag" style="border-color: #10b981; color: #10b981;">Growth Marketing</a>
+                                <a href="404.html" class="topic-tag" style="border-color: var(--accent); color: var(--accent);">Search Engine Optimization</a>
+                                <a href="404.html" class="topic-tag">SaaS Scalability</a>
+                                <a href="404.html" class="topic-tag" style="border-color: #f59e0b; color: #f59e0b;">Fundraising Strategies</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Main Grid Filterable section -->
+                    <section class="section-light" style="padding: 60px 0;">
+                        <div class="container">
+                            
+                            <div class="blog-filters reveal zoom-in">
+                                <button class="filter-btn active" data-filter="all">All Articles</button>
+                                <button class="filter-btn" data-filter="design">Product Design</button>
+                                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                                <button class="filter-btn" data-filter="growth">Growth & SEO</button>
+                            </div>
+
+                            <div class="blog-grid">
+                                
+                                <!-- Article 1 -->
+                                <article class="blog-card reveal reveal-left" data-category="design">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1581291518655-9523c932dedf?auto=format&fit=crop&w=600&q=80" alt="Figma Design Workspace" />
+                                        <span class="blog-tag">Product Design</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">July 04, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">How Figma Component Architecture Prevents Tech Debt</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Standardizing your typography and color tokens early saves hundreds of developer hours when upgrading user layouts.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_priya.png" alt="Priya Profile" class="blog-author-img" />
+                                                <span>Priya</span>
+                                            </div>
+                                            <span>6 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Article 2 -->
+                                <article class="blog-card reveal reveal-up" data-category="engineering">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="React JavaScript Code" />
+                                        <span class="blog-tag">Engineering</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">June 28, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">Choosing Next.js vs. Single-Page Apps for Startup MVPs</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Analyzing tradeoffs between SEO indexability, render speeds, and developer velocity for early-stage digital products.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_sneha.png" alt="Sneha Profile" class="blog-author-img" />
+                                                <span>Sneha</span>
+                                            </div>
+                                            <span>8 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Article 3 -->
+                                <article class="blog-card reveal reveal-right" data-category="growth">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SEO analytics data" />
+                                        <span class="blog-tag">Growth & SEO</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">May 15, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">Cracking the SEO Code: Landing Page Copy That Converts</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">How structuring headings, meta details, and semantic links helped our fintech client grow organic visitors by 140%.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_vikram.png" alt="Vikram Profile" class="blog-author-img" />
+                                                <span>Vikram</span>
+                                            </div>
+                                            <span>5 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Article 4 -->
+                                <article class="blog-card reveal reveal-left" data-category="design">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Design UI screen" />
+                                        <span class="blog-tag">Product Design</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">April 10, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">The Psychology of Dark Mode in SaaS Product Interfaces</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">A review of when to implement dark theme palettes, contrast calculations, and readability standardizations.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_priya.png" alt="Priya Profile" class="blog-author-img" />
+                                                <span>Priya</span>
+                                            </div>
+                                            <span>7 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Article 5 -->
+                                <article class="blog-card reveal reveal-up" data-category="engineering">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Server clusters glowing" />
+                                        <span class="blog-tag">Engineering</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">March 22, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">Best Practices for Launching Your Product on Vercel & AWS</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Avoid server crashes during your Product Hunt launch day. Learn how to configure caching headers and SSL paths.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_sneha.png" alt="Sneha Profile" class="blog-author-img" />
+                                                <span>Sneha</span>
+                                            </div>
+                                            <span>9 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Article 6 -->
+                                <article class="blog-card reveal reveal-right" data-category="growth">
+                                    <div class="blog-img-box img-reveal">
+                                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Startup team high-five" />
+                                        <span class="blog-tag">Growth & SEO</span>
+                                    </div>
+                                    <div class="blog-info">
+                                        <span class="blog-date">February 05, 2026</span>
+                                        <h3 class="blog-title"><a href="404.html">Why Product-Led Referral Loops are the Ultimate Growth Hack</a></h3>
+                                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">How to engineer organic sharing, sign-up rewards, and referral programs directly into your application dashboard.</p>
+                                        <div class="blog-meta">
+                                            <div class="blog-author">
+                                                <img src="assets/team_vikram.png" alt="Vikram Profile" class="blog-author-img" />
+                                                <span>Vikram</span>
+                                            </div>
+                                            <span>4 min read</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <!-- Footer -->
+                <footer class="footer-wrapper footer-one section-bg-2 footer-stackly">
+                    <div class="footer-one__bg-image bg-cover" style="background-image: url(https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/footer-bg.png);"></div>
+                    <div class="shape">
+                        <img class="shape-1" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 01.png" alt="" />
+                        <img class="shape-2" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 02.png" alt="" />
+                    </div>
+                    <div class="footer-subscribe-bar">
+                        <div class="auto-container">
+                            <div class="footer-subscribe-inner">
+                                <div class="footer-subscribe-text">
+                                    <h4>Subscribe to Stackly Updates</h4>
+                                    <p>Get product releases, startup strategy guidelines, and cloud engineering resources in your inbox.</p>
+                                </div>
+                                <div class="footer-subscribe-form">
+                                    <input type="email" placeholder="Enter your email..." />
+                                    <button type="button">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auto-container">
+                        <div class="footer-one__widget-inner">
+                            <div class="row footer-equal-row g-4">
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-one__logo">
+                                        <div class="logo mb-3">
+                                            <img src="assets/logo.webp?v=2" alt="Stackly" />
+                                        </div>
+                                        <p>Ultimate SaaS Cloud and Dedicated Cluster Platform engineered for high-availability performance. Join 10,000+ developers scaling their infrastructure with us.</p>
+                                        <div class="footer-social-icon">
+                                            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                                            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="404.html"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Platform</h5>
+                                        </div>
+                                        <ul class="usefull-link">
+                                            <li><a href="services.html">Core Features</a></li>
+                                            <li><a href="services.html">SaaS Solutions</a></li>
+                                            <li><a href="services.html">Security Shield</a></li>
+                                            <li><a href="services.html">API Reference</a></li>
+                                            <li><a href="services.html">Global Network</a></li>
+                                            <li><a href="get-started.html">Pricing Plans</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Quick Links</h5>
+                                        </div>
+                                        <ul class="usefull-link">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="services.html">Services</a></li>
+                                            <li><a href="portfolio.html">Portfolio</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Salem HQ Node</h5>
+                                        </div>
+                                        <ul class="usefull-link footer-contact-list">
+                                            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Salem, TN 636008</li>
+                                            <li><i class="fa-solid fa-phone"></i> +91 (0) 427 492 849</li>
+                                            <li><i class="fa-solid fa-envelope"></i> support@stacklycloud.com</li>
+                                            <li><i class="fa-solid fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="auto-container">
+                            <div class="content">
+                                <p>© 2026 Stackly Labs. All rights reserved.</p>
+                                <ul class="list d-flex align-items-center">
+                                    <li><a href="404.html">Privacy Policy</a></li>
+                                    <li><a href="404.html">Terms of Service</a></li>
+                                    <li><a href="404.html">SLA Commitment</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <script src="scripts.js?v=20260713c"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Portfolio - Stackly | Business Startup Agency</title>
+
+    <link rel="shortcut icon" href="assets/top-logo.webp?v=2" type="image/x-icon" />
+    <link rel="icon" href="assets/top-logo.webp?v=2" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .hero-section.hero-1 .bg-image {
+            background-position: center;
+        }
+
+        .logo img,
+        .sticky-header .logo img {
+            max-height: 48px;
+            filter: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css?v=20260714d" />
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        
+        <!-- Custom Cursor -->
+        <div id="custom-cursor-wrapper" class="tp-cursor">
+            <div id="cursor-outer">
+                <div id="cursorDot"></div>
+            </div>
+        </div>
+
+        <!-- Preloader -->
+        <div id="preloader" class="preloader stk-boot">
+            <div class="stk-boot__stage">
+                <div class="stk-boot__orbit stk-boot__orbit--a"></div>
+                <div class="stk-boot__orbit stk-boot__orbit--b"></div>
+                <div class="stk-boot__orbit stk-boot__orbit--c"></div>
+                <div class="stk-boot__spark s1"></div>
+                <div class="stk-boot__spark s2"></div>
+                <div class="stk-boot__spark s3"></div>
+                <div class="stk-boot__spark s4"></div>
+                <div class="stk-boot__logo-wrap">
+                    <img class="stk-boot__logo" src="assets/logo.webp" alt="Stackly" />
+                </div>
+                <p class="stk-boot__label">Loading experience</p>
+                <div class="stk-boot__track"><span class="stk-boot__fill"></span></div>
+            </div>
+        </div>
+
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+        <!-- Header -->
+        <header class="main-header header-style-one header-1">
+            <div class="auto-container">
+                <div class="header-lower">
+                    <div class="main-box">
+                        <div class="nav-outer">
+                            <div class="logo-box">
+                                <div class="logo">
+                                    <a href="index.html" title="Stackly"><img src="assets/logo.webp?v=2" alt="Stackly" title="Stackly"></a>
+                                </div>
+                            </div>
+                            <div class="outer-box">
+                                <nav class="nav main-menu">
+                                    <ul class="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li class="current"><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="nav-right d-flex align-items-center">
+                                <button class="ui-btn search-btn me-4" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
+                                <a href="get-started.html" class="header-btn">Get Started</a>
+                                <div class="mobile-nav-toggler d-flex d-xl-none style-2">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <nav class="menu-box">
+                    <div class="upper-box">
+                        <div class="nav-logo"><a href="index.html"><img src="assets/logo.webp?v=2" alt="Stackly" /></a></div>
+                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
+                    </div>
+                    <ul class="navigation clearfix"></ul>
+                    <ul class="contact-list-one">
+                        <li>
+                            <div class="contact-info-box">
+                                <i class="icon lnr-icon-phone-handset"></i>
+                                <span class="title">Call Now</span>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-info-box">
+                                <span class="icon lnr-icon-envelope1"></span>
+                                <span class="title">Send Email</span>
+                                <a href="mailto:hello@stackly.agency">hello@stackly.agency</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href="404.html"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="404.html"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="404.html"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Search Popup -->
+            <div class="search-popup">
+                <span class="search-back-drop"></span>
+                <button class="close-search"><span class="fa fa-times"></span></button>
+                <div class="search-inner">
+                    <form method="get" action="404.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sticky Header -->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="logo">
+                            <a href="index.html" title="Stackly"><img src="assets/logo.webp?v=2" alt="Stackly" title="Stackly"></a>
+                        </div>
+                        <div class="nav-outer">
+                            <nav class="main-menu">
+                                <div class="navbar-collapse show collapse clearfix">
+                                    <ul class="navigation clearfix"></ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="nav-right d-flex align-items-center">
+                            <div class="mobile-nav-toggler style-2 me-4">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <button class="ui-btn search-btn me-4 d-none d-lg-block" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
+                            <a href="get-started.html" class="header-btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                <main>
+                    <!-- Page Hero -->
+                    <section class="page-hero page-hero-bg" style="--page-hero-bg: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80');">
+                        <div class="container">
+                            <div class="section-header reveal zoom-in">
+                                <span class="section-subtitle">Core Capabilities</span>
+                                <h1 class="section-title split-text">Our Startup <span>Success Stories</span></h1>
+                                <p class="section-desc">Explore how we help founders configure scalable product layers, design premium UI systems, and achieve rapid growth engineering.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Case Study Dashboard Section -->
+                    <section class="section-light" style="padding: 90px 0;">
+                        <div class="container">
+                            <div class="dashboard-container">
+                                
+                                <div class="dashboard-visual reveal reveal-left">
+                                    <div class="dashboard-header-bar">
+                                        <div class="dot-group">
+                                            <span class="dot-red"></span>
+                                            <span class="dot-yellow"></span>
+                                            <span class="dot-green"></span>
+                                        </div>
+                                        <div class="dashboard-title-bar">Live Client Portal - Launch Analytics</div>
+                                    </div>
+                                    
+                                    <div class="stats-grid">
+                                        <div class="stat-item">
+                                            <div class="stat-num">98.4%</div>
+                                            <div class="stat-label">Active User Retention</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-num">25ms</div>
+                                            <div class="stat-label">Average Checkout Latency</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="premium-chart-mockup">
+                                        <div class="premium-chart-header">
+                                            <h4 class="premium-chart-title">Real-time Transaction Loads</h4>
+                                            <span class="premium-chart-badge pulse-blue">Optimized</span>
+                                        </div>
+                                        <div class="premium-chart-body core-efficiency-body">
+                                            <div class="cpu-core-visualizer">
+                                                <div class="cpu-core active" style="--core-load: 85%;"></div>
+                                                <div class="cpu-core active" style="--core-load: 70%;"></div>
+                                                <div class="cpu-core active" style="--core-load: 92%;"></div>
+                                                <div class="cpu-core active" style="--core-load: 60%;"></div>
+                                                <div class="cpu-core active" style="--core-load: 55%;"></div>
+                                                <div class="cpu-core active" style="--core-load: 45%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reveal reveal-right">
+                                    <h2 style="font-family: var(--font-display); font-size: 2.25rem; margin-bottom: 30px; line-height: 1.3; font-weight: 800; color: #fff;">Everything needed to scale your digital presence</h2>
+                                    
+                                    <div style="margin-bottom: 30px;">
+                                        <h4 style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; color:#fff;"><i class="fas fa-bolt" style="color: var(--primary);"></i> Sub-30ms Checkout Latency</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.95rem; padding-left: 26px; line-height: 1.6;">By implementing optimized GraphQL databases and caching at the edge, checkout latency is lowered to sub-30ms, boosting transaction conversions by up to 25%.</p>
+                                    </div>
+
+                                    <div style="margin-bottom: 30px;">
+                                        <h4 style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; color:#fff;"><i class="fas fa-history" style="color: var(--secondary);"></i> Zero Data Loss Failovers</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.95rem; padding-left: 26px; line-height: 1.6;">Database backups are replicated across secure nodes in real-time. In the event of host failures, request traffic is instantly routed to a hot database copy.</p>
+                                    </div>
+
+                                    <div style="margin-bottom: 0;">
+                                        <h4 style="margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; color:#fff;"><i class="fas fa-shield-virus" style="color: var(--accent);"></i> Fraud Shield Inherent</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.95rem; padding-left: 26px; line-height: 1.6;">Block malicious traffic injections and automated crawler requests at the CDN level, ensuring your platform's memory allocation stays lightweight.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Typewriter / Developer Experience Section -->
+                    <section class="section-padding" style="padding: 80px 0;">
+                        <div class="container">
+                            <div class="row align-items-center g-5">
+                                <div class="col-lg-6 reveal reveal-left">
+                                    <span class="section-subtitle">Developer Experience</span>
+                                    <h2 class="section-title">Built for <span>Seamless Connection</span></h2>
+                                    <p class="section-desc">Connect customer information, manage transactional logs, and trigger marketing automations using our modular APIs. We build clean documentation so your team links databases in seconds.</p>
+                                    <div style="margin-top: 32px;">
+                                        <a href="404.html" class="tj-primary-btn btn-simple" style="justify-content: center;"><span class="btn-text">View API Docs</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 reveal reveal-right">
+                                    <div style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); padding: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #eab308;"></div>
+                                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                                        </div>
+                                        <div class="typewriter-container" style="color: #a5b4fc; font-size: 0.95rem; line-height: 1.8; font-family: monospace;">
+                                            <span style="color: #38bdf8;">$</span> curl -X POST https://api.stackly.com/v1/projects \<br>
+                                            &nbsp;&nbsp;-H "Authorization: Bearer $STACKLY_TOKEN" \<br>
+                                            &nbsp;&nbsp;-d '{<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"project_name": "fintech-checkout-flow",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"template": "e-commerce-nextjs",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"db_instance": "postgres-secure-replica"<br>
+                                            &nbsp;&nbsp;}'<br>
+                                            <br>
+                                            <span style="color: #22c55e;">> { "status": "deployed", "id": "proj_9x8d7..." }</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Interactive Tabs section -->
+                    <section class="section-padding" style="padding: 80px 0; background-color: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                        <div class="container">
+                            <div class="section-header text-center reveal zoom-in" style="max-width: 600px; margin: 0 auto 40px;">
+                                <h2 class="section-title">Solutions for <span>Every Stage</span></h2>
+                            </div>
+                            
+                            <div class="feature-tabs-nav reveal reveal-up">
+                                <button class="feature-tab-btn active" onclick="openTab(event, 'tab-startup')">For Startups</button>
+                                <button class="feature-tab-btn" onclick="openTab(event, 'tab-enterprise')">For Enterprises</button>
+                                <button class="feature-tab-btn" onclick="openTab(event, 'tab-agency')">For Partners</button>
+                            </div>
+                            
+                            <div class="reveal reveal-up delay-100">
+                                <div id="tab-startup" class="feature-tab-content active text-center" style="max-width: 800px; margin: 0 auto;">
+                                    <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #fff;">Launch fast with zero execution drag</h3>
+                                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Avoid wasting your early funding runway on overhead. Stackly builds your custom MVP in weeks, fully configured for cloud scalability so you scale seamlessly when traffic goes viral.</p>
+                                </div>
+                                
+                                <div id="tab-enterprise" class="feature-tab-content text-center" style="max-width: 800px; margin: 0 auto;">
+                                    <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #fff;">Compliance and Control</h3>
+                                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Dedicated VPCs, custom database replications, and HIPAA security guidelines. We build platforms designed to fulfill the complex security needs of modern enterprises.</p>
+                                </div>
+                                
+                                <div id="tab-agency" class="feature-tab-content text-center" style="max-width: 800px; margin: 0 auto;">
+                                    <h3 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 20px; font-weight: 700; color: #fff;">Strategic White-Labeled Support</h3>
+                                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Function as a seamless expansion of your company. We build high-fidelity wireframes, robust backend microservices, and manage database configurations for your clients.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Security Section -->
+                    <section class="section-padding" style="padding: 80px 0; background-color: rgba(255, 255, 255, 0.02);">
+                        <div class="container">
+                            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                                <div class="col-lg-6 reveal reveal-right">
+                                    <span class="section-subtitle">Zero-Vulnerability Code</span>
+                                    <h2 class="section-title">Enterprise-Grade <span>Security</span> Protocols</h2>
+                                    <p class="section-desc">Protect customer profiles, payments, and application directories. Our engineering squad inherently implements security patterns complying with modern SOC2 Type II guidelines.</p>
+                                    <ul class="check-list" style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Automated DDoS mitigation filters.</li>
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Native end-to-end data encryption.</li>
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Compliant audit and database access logs.</li>
+                                    </ul>
+                                    <div style="margin-top: 32px;">
+                                        <a href="404.html" class="tj-primary-btn btn-simple" style="justify-content: center;"><span class="btn-text">Read Security Standards</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 reveal reveal-left">
+                                    <img src="assets/img-ext-31.webp" alt="Cybersecurity Architecture" style="border-radius: var(--radius-lg); width: 100%; border: 1px solid var(--border);" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Scaling Architecture Section -->
+                    <section class="section-padding" style="padding: 80px 0;">
+                        <div class="container">
+                            <div class="row align-items-center g-5">
+                                <div class="col-lg-6 reveal reveal-left">
+                                    <span class="section-subtitle">Scalable Headless Cloud</span>
+                                    <h2 class="section-title">Intelligent <span>Auto-Scaling</span> Cloud</h2>
+                                    <p class="section-desc">Never worry about your application crashing during traffic spikes. We build architectures that monitor user loads in real-time, dynamically spawning cloud capacities to handle millions of visitors.</p>
+                                    <ul class="check-list" style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0;">
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Seamless node expansion under 4 seconds.</li>
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Caching configurations that reduce DB load.</li>
+                                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Budget ceilings to protect against runaway fees.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 reveal reveal-right">
+                                    <img src="assets/img-ext-32.webp" alt="Server Auto-scaling Performance" style="border-radius: var(--radius-lg); width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Specs Matrix Comparison Table Section -->
+                    <section class="section-padding" style="padding: 80px 0;">
+                        <div class="container">
+                            <div class="section-header reveal zoom-in text-center">
+                                <span class="section-subtitle">Specs Matrix</span>
+                                <h2 class="section-title">Compare <span>Partnership Tiers</span></h2>
+                                <p class="section-desc">Select the execution configuration that fits your startup scale requirements.</p>
+                            </div>
+
+                            <div class="reveal reveal-up" style="background-color: var(--bg-card); border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" style="margin-bottom: 0; vertical-align: middle; font-size: 0.95rem;">
+                                        <thead style="background-color: var(--bg-main); font-family: var(--font-display); font-weight: 700; border-bottom: 1.5px solid var(--border);">
+                                            <tr>
+                                                <th style="padding: 20px 24px; color:#fff;">Compare Features</th>
+                                                <th style="padding: 20px 24px; color:#fff;">Sprint Build</th>
+                                                <th style="padding: 20px 24px; color:#fff;">Co-Founder Squad</th>
+                                                <th style="padding: 20px 24px; color:#fff;">Enterprise Scale</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="color: var(--text-muted);">
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">Dedicated Builders</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">1 UI/UX Designer / Dev</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">3 Dedicated Engineers</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Full Product Squad</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">Execution Cycle</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Bi-weekly Sprints</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Weekly Sprints</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Continuous Retainer</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">Launch Timeline</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">6 Weeks MVP Launch</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">4 Weeks MVP Launch</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Custom Phased Delivery</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">SEO Optimization</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: 1px solid var(--border);"><i class="fas fa-check-circle"></i> Basic Setup</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: 1px solid var(--border);"><i class="fas fa-check-circle"></i> Advanced Audited</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: 1px solid var(--border);"><i class="fas fa-check-circle"></i> Continuous SEO Strategy</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">Figma UI/UX Systems</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">15 Main Screens</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: 1px solid var(--border);"><i class="fas fa-check-circle"></i> Unlimited Screens</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: 1px solid var(--border);"><i class="fas fa-check-circle"></i> Bespoke Enterprise Design System</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: 1px solid var(--border);">Developer Advisory</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Slack & Email Support</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">24/7 Slack / Phone Channel</td>
+                                                <td style="padding: 18px 24px; border-bottom: 1px solid var(--border);">Direct CTO / Lead Advisory</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight: 700; color: var(--text-main); padding: 18px 24px; border-bottom: none;">Incubation Consulting</td>
+                                                <td style="color: var(--danger); padding: 18px 24px; border-bottom: none;"><i class="fas fa-times-circle"></i> Not Available</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: none;"><i class="fas fa-check-circle"></i> Pitch Deck Review</td>
+                                                <td style="color: var(--success); padding: 18px 24px; border-bottom: none;"><i class="fas fa-check-circle"></i> Direct Investor Access</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <!-- Footer -->
+                <footer class="footer-wrapper footer-one section-bg-2 footer-stackly">
+                    <div class="footer-one__bg-image bg-cover" style="background-image: url(https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/footer-bg.png);"></div>
+                    <div class="shape">
+                        <img class="shape-1" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 01.png" alt="" />
+                        <img class="shape-2" src="https://php.kodesolution.com/2025/%74%65%63%68%69%78-php/images/home-1/footer/shape\ 02.png" alt="" />
+                    </div>
+                    <div class="footer-subscribe-bar">
+                        <div class="auto-container">
+                            <div class="footer-subscribe-inner">
+                                <div class="footer-subscribe-text">
+                                    <h4>Subscribe to Stackly Updates</h4>
+                                    <p>Get product releases, startup strategy guidelines, and cloud engineering resources in your inbox.</p>
+                                </div>
+                                <div class="footer-subscribe-form">
+                                    <input type="email" placeholder="Enter your email..." />
+                                    <button type="button">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auto-container">
+                        <div class="footer-one__widget-inner">
+                            <div class="row footer-equal-row g-4">
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-one__logo">
+                                        <div class="logo mb-3">
+                                            <img src="assets/logo.webp?v=2" alt="Stackly" />
+                                        </div>
+                                        <p>Ultimate SaaS Cloud and Dedicated Cluster Platform engineered for high-availability performance. Join 10,000+ developers scaling their infrastructure with us.</p>
+                                        <div class="footer-social-icon">
+                                            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                                            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="404.html"><i class="fa-brands fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Platform</h5>
+                                        </div>
+                                        <ul class="usefull-link">
+                                            <li><a href="services.html">Core Features</a></li>
+                                            <li><a href="services.html">SaaS Solutions</a></li>
+                                            <li><a href="services.html">Security Shield</a></li>
+                                            <li><a href="services.html">API Reference</a></li>
+                                            <li><a href="services.html">Global Network</a></li>
+                                            <li><a href="get-started.html">Pricing Plans</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Quick Links</h5>
+                                        </div>
+                                        <ul class="usefull-link">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="services.html">Services</a></li>
+                                            <li><a href="portfolio.html">Portfolio</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                    <div class="footer-widget">
+                                        <div class="widget-title">
+                                            <h5 class="title">Salem HQ Node</h5>
+                                        </div>
+                                        <ul class="usefull-link footer-contact-list">
+                                            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Salem, TN 636008</li>
+                                            <li><i class="fa-solid fa-phone"></i> +91 (0) 427 492 849</li>
+                                            <li><i class="fa-solid fa-envelope"></i> support@stacklycloud.com</li>
+                                            <li><i class="fa-solid fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="auto-container">
+                            <div class="content">
+                                <p>© 2026 Stackly Labs. All rights reserved.</p>
+                                <ul class="list d-flex align-items-center">
+                                    <li><a href="404.html">Privacy Policy</a></li>
+                                    <li><a href="404.html">Terms of Service</a></li>
+                                    <li><a href="404.html">SLA Commitment</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <script src="scripts.js?v=20260713c"></script>
+        <script>
+            // Inline Tab Switcher
+            function openTab(evt, tabId) {
+                const contents = document.querySelectorAll('.feature-tab-content');
+                contents.forEach(c => {
+                    c.style.display = 'none';
+                    c.classList.remove('active');
+                });
+                
+                const buttons = document.querySelectorAll('.feature-tab-btn');
+                buttons.forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                const targetTab = document.getElementById(tabId);
+                if (targetTab) {
+                    targetTab.style.display = 'block';
+                    targetTab.classList.add('active');
+                }
+                evt.currentTarget.classList.add('active');
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sign In - Stackly Startup Agency</title>
+
+    
+    <link rel="shortcut icon" href="assets/top-logo.webp" type="image/x-icon" />
+    <link rel="icon" href="assets/top-logo.webp" type="image/x-icon" />
+
+    
+    <link href="https://php.kodesolution.com/2025/techix-php/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://php.kodesolution.com/2025/techix-php/css/style.css" rel="stylesheet" />
+    <link href="https://php.kodesolution.com/2025/techix-php/css/responsive.css" rel="stylesheet" />
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .logo img,
+        .sticky-header .logo img {
+            max-height: 40px;
+            filter: none;
+        }
+
+        .footer-one__logo .logo img {
+            filter: none;
+        }
+
+        .auth-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    
+    <div class="page-wrapper">
+        
+        <div id="custom-cursor-wrapper" class="tp-cursor">
+            <div id="cursor-outer">
+                <div id="cursorDot"></div>
+            </div>
+        </div>
+
+        
+        <header class="main-header header-style-one header-1">
+            <div class="auto-container">
+                <div class="header-lower">
+                    <div class="main-box">
+                        <div class="nav-outer">
+                            <div class="logo-box">
+                                <div class="logo">
+                                    <a href="index.html" title="Stackly"><img src="assets/logo.webp" alt="Stackly" title="Stackly"></a>
+                                </div>
+                            </div>
+                            <div class="outer-box">
+                                <nav class="nav main-menu">
+                                    <ul class="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="nav-right d-flex align-items-center">
+                                <button class="ui-btn search-btn me-4" style="background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <a href="signin.html" class="header-btn me-3 signin-btn">Sign In</a>
+                                <a href="get-started.html" class="header-btn">Get Started</a>
+                                <div class="mobile-nav-toggler d-flex d-xl-none style-2">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <nav class="menu-box">
+                    <div class="upper-box">
+                        <div class="nav-logo"><a href="index.html"><img src="assets/logo.webp" alt="Stackly" /></a></div>
+                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
+                    </div>
+                    <ul class="navigation clearfix"></ul>
+                    <ul class="contact-list-one">
+                        <li>
+                            <div class="contact-info-box">
+                                <i class="icon lnr-icon-phone-handset"></i>
+                                <span class="title">Call Now</span>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+
+                
+                <section class="page-title" style="background-image: url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80);">
+                    <div class="auto-container">
+                        <div class="title-outer text-center">
+                            <h1 class="title">Sign In</h1>
+                            <ul class="page-breadcrumb">
+                                <li><a href="index.html">Home</a></li>
+                                <li>Sign In</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="auth-container section-bg">
+                    <div class="auto-container d-flex justify-content-center">
+                        <div class="auth-box ks_fade_anim" data-delay=".3" data-fade-from="top">
+                            <div class="text-center mb-4">
+                                <h3 class="mb-2 text-dark">Welcome Back</h3>
+                                <p class="text-muted">Sign in to your Stackly Dashboard</p>
+                            </div>
+                            <form action="customer-dashboard.html">
+                                <div class="form-group mb-4">
+                                    <label class="mb-2 fw-bold text-dark">Email Address</label>
+                                    <input type="email" class="form-control p-3" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="mb-2 fw-bold text-dark">Password</label>
+                                    <input type="password" class="form-control p-3" placeholder="Enter your password" required>
+                                </div>
+                                <div class="d-flex justify-content-between mb-4">
+                                    <label class="text-muted"><input type="checkbox" class="me-2"> Remember Me</label>
+                                    <a href="404.html" style="color: var(--theme-color1);">Forgot Password?</a>
+                                </div>
+                                <button type="submit" class="theme-btn-main w-100 border-0" style="cursor: pointer;">
+                                    <span class="theme-btn">Sign In to Dashboard</span>
+                                </button>
+                            </form>
+                            <p class="text-center mt-4 text-muted">Don't have an account? <a href="get-started.html" class="fw-bold" style="color: var(--theme-color1);">Get Started</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stk-extra section-padding">
+                    <div class="auto-container">
+                        <div class="section-title text-center mb-4">
+                            <div class="sub-title"><div class="dot"></div><span>How We Work</span></div>
+                            <h2 class="title">A clear path from idea to launch</h2>
+                        </div>
+                        <div class="stk-steps">
+                            <div class="stk-step"><div class="num">1</div><h4>Discover</h4><p>Workshops and research to lock goals and audience.</p></div>
+                            <div class="stk-step"><div class="num">2</div><h4>Design</h4><p>Brand, UX, and prototypes your users will love.</p></div>
+                            <div class="stk-step"><div class="num">3</div><h4>Build</h4><p>Modern web products engineered for speed and scale.</p></div>
+                            <div class="stk-step"><div class="num">4</div><h4>Grow</h4><p>Launch, measure, and iterate with growth partners.</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stk-extra section-padding section-bg">
+                    <div class="auto-container">
+                        <div class="section-title text-center mb-4">
+                            <div class="sub-title"><div class="dot"></div><span>Insights</span></div>
+                            <h2 class="title">Secure access to your workspace</h2>
+                        </div>
+                        <div class="stk-extra__grid">
+                            <article class="stk-extra__card">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="" />
+                                <div class="body"><h3>Client portals</h3><p>Secure spaces for files, feedback, and approvals.</p></div>
+                            </article>
+                            <article class="stk-extra__card">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80" alt="" />
+                                <div class="body"><h3>Project hubs</h3><p>One place for timelines, assets, and status updates.</p></div>
+                            </article>
+                            <article class="stk-extra__card">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="" />
+                                <div class="body"><h3>Support desks</h3><p>Help when you need it without leaving your workspace.</p></div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stk-extra section-padding">
+                    <div class="auto-container">
+                        <div class="stk-banner" style="background-image:url(https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80);">
+                            <div class="inner">
+                                <h2>Let’s build your next chapter</h2>
+                                <p>Book a discovery call and get a clear plan for design, product, and growth.</p>
+                                <a class="theme-btn-main" href="get-started.html">
+                                    <span class="theme-btn-arrow-left"><i class="fa-solid fa-arrow-right-long"></i></span>
+                                    <span class="theme-btn">Get Started</span>
+                                    <span class="theme-btn-arrow-right"><i class="fa-solid fa-arrow-right-long"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <footer class="footer-wrapper footer-one section-bg-2">
+                    <div class="footer-one__bg-image bg-cover" style="background-image: url(https://php.kodesolution.com/2025/techix-php/images/home-1/footer/footer-bg.png);"></div>
+                    <div class="auto-container">
+                        <div class="footer-one__widget-inner">
+                            <div class="row pt-5">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 ks_fade_anim" data-delay=".4">
+                                    <div class="footer-one__logo style-1 me-xl-5">
+                                        <div class="logo mb-4">
+                                            <img src="assets/logo.webp" alt="Stackly" />
+                                        </div>
+                                        <p>Stackly is your premium partner for building ultra-modern, interactive web experiences and driving startup growth.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="auto-container">
+                            <div class="content">
+                                <p>© Copyright 2026 by Stackly Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+        
+
+        
+        <script src="https://php.kodesolution.com/2025/techix-php/js/jquery.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/popper.min.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/bootstrap.min.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-to-plugin.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-smoother.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/gsap-scroll-trigger.js"></script>
+        <script src="https://php.kodesolution.com/2025/techix-php/js/script.js"></script>
+
+</body>
+
+</html>

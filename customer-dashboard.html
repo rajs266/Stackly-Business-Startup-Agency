@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Dashboard - Stackly Startup Agency</title>
+
+    
+    <link rel="shortcut icon" href="assets/top-logo.webp" type="image/x-icon" />
+    <link rel="icon" href="assets/top-logo.webp" type="image/x-icon" />
+
+    
+    <link href="https://php.kodesolution.com/2025/techix-php/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://php.kodesolution.com/2025/techix-php/css/style.css" rel="stylesheet" />
+    <link href="https://php.kodesolution.com/2025/techix-php/css/responsive.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .logo img,
+        .sticky-header .logo img {
+            max-height: 40px;
+            filter: none;
+        }
+
+        .sidebar {
+            background: #fff;
+            border-right: 1px solid #eee;
+            min-height: calc(100vh - 100px);
+        }
+
+        .sidebar .nav-link {
+            color: var(--text-color);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: var(--theme-color-light);
+            color: var(--theme-color1);
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid var(--theme-color1);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-light">
+    
+    <div class="page-wrapper">
+        
+        <div id="custom-cursor-wrapper" class="tp-cursor">
+            <div id="cursor-outer">
+                <div id="cursorDot"></div>
+            </div>
+        </div>
+
+        
+        <header class="main-header header-style-one header-1 bg-dark">
+            <div class="auto-container">
+                <div class="header-lower">
+                    <div class="main-box">
+                        <div class="nav-outer">
+                            <div class="logo-box">
+                                <div class="logo">
+                                    <a href="index.html" title="Stackly"><img src="assets/logo.webp" alt="Stackly" title="Stackly" /></a>
+                                </div>
+                            </div>
+                            <div class="outer-box">
+                                <h4 class="text-white mb-0 ms-4">Customer Portal</h4>
+                            </div>
+                            <div class="nav-right">
+                                <a href="index.html" class="header-btn">Logout <i class="bi bi-box-arrow-right ms-2"></i></a>
+                                <div class="mobile-nav-toggler d-flex d-xl-none style-2">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container-fluid mt-5 pt-5">
+            <div class="row">
+                
+                <div class="col-md-3 col-lg-2 d-md-block sidebar collapse bg-white pt-4">
+                    <div class="position-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><i class="bi bi-grid me-2"></i> Dashboard Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-folder2-open me-2"></i> My Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-receipt me-2"></i> Billing & Invoices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-ticket-detailed me-2"></i> Support
+                                    Tickets</a>
+                            </li>
+                            <li class="nav-item mt-4">
+                                <a class="nav-link text-muted" href="#"><i class="bi bi-gear me-2"></i> Account Settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4 pb-5">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+                        <h1 class="h2 text-dark">Welcome back, John!</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button type="button" class="theme-btn-main style-2 border-0" style="padding: 10px 20px">
+                                <span class="theme-btn theme-btn-small">New Project</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row mb-5">
+                        <div class="col-md-4 mb-4 ks_fade_anim" data-delay=".3">
+                            <div class="stat-card">
+                                <h6 class="text-muted text-uppercase mb-2">
+                                    Active Projects
+                                </h6>
+                                <h2 class="mb-0 fw-bold" style="color: var(--theme-color1)">
+                                    2
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4 ks_fade_anim" data-delay=".4">
+                            <div class="stat-card" style="border-left-color: var(--theme-color3)">
+                                <h6 class="text-muted text-uppercase mb-2">
+                                    Pending Invoices
+                                </h6>
+                                <h2 class="mb-0 fw-bold" style="color: var(--theme-color3)">
+                                    $0.00
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4 ks_fade_anim" data-delay=".5">
+                            <div class="stat-card" style="border-left-color: #f59e0b">
+                                <h6 class="text-muted text-uppercase mb-2">Open Tickets</h6>
+                                <h2 class="mb-0 fw-bold" style="color: #f59e0b">1</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <h4 class="mb-4 text-dark">Recent Project Activity</h4>
+                    <div class="bg-white rounded shadow-sm p-4 ks_fade_anim" data-delay=".6">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle border-bottom-0">
+                                <thead>
+                                    <tr>
+                                        <th class="border-0">Project Name</th>
+                                        <th class="border-0">Status</th>
+                                        <th class="border-0">Last Update</th>
+                                        <th class="border-0 text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Cloud SaaS UI Design</strong></td>
+                                        <td>
+                                            <span class="badge bg-success rounded-pill px-3 py-2">Completed</span>
+                                        </td>
+                                        <td>Oct 24, 2026</td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-sm btn-light">View Details</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fintech Mobile App</strong></td>
+                                        <td>
+                                            <span class="badge bg-primary rounded-pill px-3 py-2">In Progress (65%)</span>
+                                        </td>
+                                        <td>Oct 26, 2026</td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-sm btn-light">View Details</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://php.kodesolution.com/2025/techix-php/js/jquery.js"></script>
+    <script src="https://php.kodesolution.com/2025/techix-php/js/bootstrap.min.js"></script>
+    <script src="https://php.kodesolution.com/2025/techix-php/js/gsap.js"></script>
+    <script src="https://php.kodesolution.com/2025/techix-php/js/script.js"></script>
+</body>
+
+</html>
